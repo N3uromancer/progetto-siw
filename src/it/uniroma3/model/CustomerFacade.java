@@ -7,16 +7,14 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
-	@Stateless(name="cFacade")
+	@Stateless
 	public class CustomerFacade {
 		
 	    @PersistenceContext(unitName = "unit-jee-es2")
 	    private EntityManager em;
 	    
-		public Customer createCustomer(String firstName, String lastName, String email, int phoneNumber, String password, String street, String city, String state, String zipcode, String country) {
-			Address address = new Address(street, city, state, zipcode, country);
-			em.persist(address);
-			Customer customer = new Customer(firstName, lastName, email, phoneNumber, password);
+		public Customer createCustomer(String firstName, String lastName) {
+			Customer customer = new Customer(firstName, lastName);
 			em.persist(customer);
 			return customer;
 		}
@@ -35,6 +33,13 @@ import java.util.List;
 			return customers;
 		}
 
+		public Customer getCustomer(Long id){
+			Query q = em.createQuery("SELECT c FROM Customer c WHERE c.id = :id");
+			q.setParameter("id", id);
+			Customer customer = (Customer) q.getSingleResult();
+			return customer;
+		}
+		
 		public void updateCustomer(Customer customer) {
 	        em.merge(customer);
 		}

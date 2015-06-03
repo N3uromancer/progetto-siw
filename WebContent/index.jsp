@@ -19,6 +19,14 @@
 					<h:commandLink action="#{productController.listProducts}"
 						value="List all Products" />
 				</h:form></li>
+			<li>
+			<li><a href='<c:url value="/faces/newCustomer.jsp" />'>Insert
+					a new customer</a></li>
+			<li>
+			<h:form>
+					<h:commandLink action="#{customerController.listCustomers}"
+						value="List all Customers" />
+				</h:form></li>
 		</ul>
 	</f:view>
 </body>

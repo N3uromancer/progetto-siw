@@ -29,9 +29,9 @@ public class Customer {
 	@OneToMany(mappedBy = "customer")
 	private List<Order> orders;
 	
-	@OneToOne
-	@JoinColumn(name = "address_id")
-	private Address address;
+	//@OneToOne
+	//@JoinColumn(name = "address_id")
+	//private Address address;
 	
 	public Customer(){
 		this.orders = new LinkedList<Order>();
@@ -44,6 +44,11 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 		this.password = password;
 		
+	}
+	
+	public Customer(String firstName, String lastName){
+		this.firstName=firstName;
+		this.lastName=lastName;
 	}
 	
 	public String getPassword() {
@@ -91,10 +96,10 @@ public class Customer {
 		this.phoneNumber = newPhoneNumber;
 	}
 	
-	public void setAddress(Address newAddress){
+	/*public void setAddress(Address newAddress){
 		this.address = new Address();
 		this.address = newAddress;
-	}
+	}*/
 	
 	public void addOrder(Order newOrder){
 		this.orders.add(newOrder);
