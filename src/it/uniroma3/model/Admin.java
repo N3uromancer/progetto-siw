@@ -42,4 +42,8 @@ public class Admin {
 		Admin a = (Admin)o;
 		return this.name.equals(a.getName()) && this.password.equals(a.getPassword());
 	}
+	
+	public boolean verifyPassword(String password){
+		return this.password.equals(password);
+	}
 }
