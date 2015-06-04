@@ -16,11 +16,14 @@
 		<th>First name</th><th>Last name</th>
 	</tr>
 	<c:forEach var="customer" items="#{customerController.customers}">
-		<tr><td>
-		<h:commandLink action="#{customerController.findCustomer}" value="#{customer.firstName}">
-			<f:param name="id" value="#{customer.id}" />
-		</h:commandLink>
-		</td><td>${customer.lastName}</td></tr>
+		<tr>
+		<td>
+			<h:commandLink action="#{customerController.findCustomer}" value="#{customer.firstName}">
+				<f:param name="id" value="#{customer.id}" />
+			</h:commandLink>
+		</td>
+		<td>${customer.lastName}</td>
+		</tr>
 	</c:forEach>
 </table>
 </h:form>

@@ -10,20 +10,20 @@
 <body>
 <f:view>
 <h:form>
-    <div>Name: <h:inputText value="#{customerController.firstName}" 
+    <div>First name: <h:inputText value="#{customerController.firstName}" 
                      required="true"
-                     requiredMessage="Name is mandatory"
-                     id="firstName"/> <h:message for="lastName" />
+                     requiredMessage="First name is mandatory"
+                     id="firstName"/> <h:message for="firstName" />
 	</div>
-    <div>Code: <h:inputText value="#{customerController.lastName}" 
+    <div>Last name: <h:inputText value="#{customerController.lastName}" 
                      required="true"
                      requiredMessage="Last name is mandatory"
-                     id="code"/> <h:message for="lastName" />
+                     id="lastName"/> <h:message for="lastName" />
 	</div>
 	<div>
 		<h:commandButton value="Submit"  action="#{customerController.createCustomer}"/>
 	</div>
-	<h:commandLink action="#{customerController.listCostumers}"
+	<h:commandLink action="#{customerController.listCustomers}"
 						value="List all Customers" />
 </h:form>
 </f:view>

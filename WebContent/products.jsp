@@ -16,15 +16,18 @@
 		<th>Name</th><th>Price</th>
 	</tr>
 	<c:forEach var="product" items="#{productController.products}">
-		<tr><td>
-		<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
-			<f:param name="id" value="#{product.id}" />
-		</h:commandLink>
-		</td><td>${product.price}</td></tr>
+		<tr>
+			<td>
+				<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
+					<f:param name="id" value="#{product.id}" />
+				</h:commandLink>
+			</td>
+			<td>${product.price}</td>
+		</tr>
 	</c:forEach>
 </table>
 </h:form>
-
+<a href='<c:url value="/faces/index.jsp" />'>Back</a>
 </f:view>
 </body>
 </html>
