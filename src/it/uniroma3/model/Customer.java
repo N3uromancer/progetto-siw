@@ -17,21 +17,18 @@ public class Customer {
 	@Column(nullable = false)
 	private  String lastName;
 	
-	@Column(nullable = false)
-	private String password;             //--------------------------------password
+	private String password;
 	
-	@Column(nullable = false)
 	private String email;
 	
-	@Column(nullable = false)
 	private int phoneNumber;
 	
 	@OneToMany(mappedBy = "customer")
 	private List<Order> orders;
 	
-	//@OneToOne
-	//@JoinColumn(name = "address_id")
-	//private Address address;
+	@OneToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
 	
 	public Customer(){
 		this.orders = new LinkedList<Order>();
@@ -80,8 +77,8 @@ public class Customer {
 		return this.phoneNumber;
 	}
 	
-	public void setFirstName(String newfirstName){
-		this.firstName = newfirstName;
+	public void setFirstName(String newFirstName){
+		this.firstName = newFirstName;
 	}
 	
 	public void setLastName(String newLastName){
@@ -96,10 +93,10 @@ public class Customer {
 		this.phoneNumber = newPhoneNumber;
 	}
 	
-	/*public void setAddress(Address newAddress){
+	public void setAddress(Address newAddress){
 		this.address = new Address();
 		this.address = newAddress;
-	}*/
+	}
 	
 	public void addOrder(Order newOrder){
 		this.orders.add(newOrder);
