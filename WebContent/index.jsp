@@ -12,7 +12,7 @@
 <body>
 	<f:view>
 		<h1>Progetto SIW</h1>
-		<h3>di Gabriele Di Bonaventura e Igor</h3>
+		<h3>di Gabriele Di Bonaventura e Igor Proshchenko.</h3>
 		<ul>
 			<li>
 				<a href='<c:url value="/faces/adminLogin.jsp" />'>Admin Login</a>
