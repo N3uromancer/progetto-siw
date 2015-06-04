@@ -7,26 +7,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>SIW-JEE-ES2</title>
+<title>Progetto SIW</title>
 </head>
 <body>
 	<f:view>
-		<h1>SIW-JEE-ES2</h1>
+		<h1>Progetto SIW</h1>
+		<h3>di Gabriele Di Bonaventura e Igor</h3>
 		<ul>
-			<li><a href='<c:url value="/faces/newProduct.jsp" />'>Insert
-					a new product</a></li>
-			<li><h:form>
+			<li>
+				<a href='<c:url value="/faces/adminLogin.jsp" />'>Admin Login</a>
+			</li>
+			<li>
+				<h:form>
 					<h:commandLink action="#{productController.listProducts}"
 						value="List all Products" />
-				</h:form></li>
-			<li>
-			<li><a href='<c:url value="/faces/newCustomer.jsp" />'>Insert
-					a new customer</a></li>
-			<li>
-			<h:form>
-					<h:commandLink action="#{customerController.listCustomers}"
-						value="List all Customers" />
-				</h:form></li>
+				</h:form>
+			</li>
 		</ul>
 	</f:view>
 </body>
