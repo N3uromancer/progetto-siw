@@ -10,10 +10,10 @@
 <body>
 <f:view>
 <h:form>
-    <div>Name: <h:inputText value="#{customerController.name}" 
+    <div>Email: <h:inputText value="#{customerController.email}" 
                      required="true"
                      requiredMessage="Name is mandatory"
-                     id="name"/> <h:message for="name" />
+                     id="email"/> <h:message for="email" />
 	</div>
     <div>Password <h:inputText value="#{customerController.password}" 
                      required="true"

@@ -17,6 +17,8 @@ public class CustomerController {
 	private String firstName;
 	private String lastName;
 	private Customer customer;
+	private String password;
+	private String email;
 	private List<Customer> customers;
 	
 	@EJB
@@ -41,6 +43,21 @@ public class CustomerController {
 		this.customer = customerFacade.getCustomer(id);
 		return "customer";
 	}
+	
+	public String login(){
+		String nextPage = "";
+		try{
+			Customer customer = customerFacade.getCustomerByEmail(this.email);
+			if(customer.verifyPassword(this.password)){
+				nextPage = "customerWelcomePage";                                            //da implementare customer welcome page
+			} else nextPage = "customerLogin";
+		} 	
+		catch(Exception e){
+			nextPage = "customerLogin";
+		}
+		return nextPage;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -81,6 +98,24 @@ public class CustomerController {
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 }
 
 
