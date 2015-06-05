@@ -8,6 +8,7 @@
 <title>Admin Login</title>
 </head>
 <body>
+<h1>Admin Login</h1>
 <f:view>
 <h:form>
     <div>Name: <h:inputText value="#{adminController.name}" 
