@@ -21,7 +21,7 @@ public class AdminController {
 		try{
 			Admin admin = adminFacade.getAdminByName(this.name);
 			if(admin.verifyPassword(this.password)){
-				nextPage = "admin";
+				nextPage = "adminWelcomePage";
 			} else nextPage = "adminLogin";
 		} 	
 		catch(Exception e){
