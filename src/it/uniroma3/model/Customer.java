@@ -105,4 +105,13 @@ public class Customer {
 	public List<Order> getOrders(){
 		return this.orders;
 	}
+	
+	public boolean equals(Object o){
+		Customer c = (Customer)o;
+		return this.firstName.equals(c.getFirstName()) && this.password.equals(c.getPassword());
+	}
+	
+	public boolean verifyPassword(String password){
+		return this.password.equals(password);
+	}
 }

@@ -18,6 +18,9 @@
 				<a href='<c:url value="/faces/adminLogin.jsp" />'>Admin Login</a>
 			</li>
 			<li>
+				<a href='<c:url value="/faces/customerLogin.jsp" />'>Customer Login</a>
+			</li>
+			<li>
 				<h:form>
 					<h:commandLink action="#{productController.listProducts}"
 						value="List all Products" />
