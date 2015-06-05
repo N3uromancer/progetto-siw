@@ -34,9 +34,11 @@ import java.util.List;
 		}
 
 		public Customer getCustomer(Long id){
-			Query q = em.createQuery("SELECT c FROM Customer c WHERE c.id = :id");
+			/*Query q = em.createQuery("SELECT c FROM Customer c WHERE c.id = :id");
 			q.setParameter("id", id);
 			Customer customer = (Customer) q.getSingleResult();
+			return customer;*/
+			Customer customer = em.find(Customer.class, id);
 			return customer;
 		}
 		
