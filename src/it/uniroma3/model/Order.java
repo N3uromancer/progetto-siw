@@ -12,7 +12,7 @@ public class Order {
 	private long id;
 	
 	@OneToMany
-	@JoinColumn(name = "orderline_id")
+	@JoinColumn(name = "orders_id")
 	private List<OrderLine> orderLines;
 	
 	@ManyToOne
