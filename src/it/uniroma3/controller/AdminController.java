@@ -12,6 +12,7 @@ public class AdminController {
 	private Long id;
 	private String name;
 	private String password;
+	private Admin loggedAdmin;
 
 	@EJB
 	private AdminFacade adminFacade;
@@ -21,7 +22,8 @@ public class AdminController {
 		try{
 			Admin admin = adminFacade.getAdminByName(this.name);
 			if(admin.verifyPassword(this.password)){
-				nextPage = "admin";
+				nextPage = "adminWelcomePage";
+				this.loggedAdmin = admin;
 			} else nextPage = "adminLogin";
 		} 	
 		catch(Exception e){
@@ -52,6 +54,14 @@ public class AdminController {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Admin getLoggedAdmin(){
+		return this.loggedAdmin;
+	}
+	
+	public void setLoggedAdmin(Admin admin){
+		this.loggedAdmin = admin;
 	}
 
 }

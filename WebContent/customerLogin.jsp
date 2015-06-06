@@ -8,6 +8,7 @@
 <title>Customer Login</title>
 </head>
 <body>
+<h1>Customer Login</h1>
 <f:view>
 <h:form>
     <div>Email: <h:inputText value="#{customerController.email}" 

@@ -8,6 +8,7 @@
 <title>Admin Login</title>
 </head>
 <body>
+<h1>Admin Login</h1>
 <f:view>
 <h:form>
     <div>Name: <h:inputText value="#{adminController.name}" 
@@ -15,7 +16,7 @@
                      requiredMessage="Name is mandatory"
                      id="name"/> <h:message for="name" />
 	</div>
-    <div>Password <h:inputText value="#{adminController.password}" 
+    <div>Password: <h:inputSecret value="#{adminController.password}" 
                      required="true"
                      requiredMessage="Password is mandatory"
                      id="password"/> <h:message for="password" />
