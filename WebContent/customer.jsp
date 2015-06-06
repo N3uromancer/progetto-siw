@@ -10,7 +10,10 @@
 	<f:view>
 	First Name : ${customerController.customer.firstName} <br />
 	Last Name : ${customerController.customer.lastName} <br />
+	<h:form>
+		<h:commandLink action="#{customerController.listCustomers}"
+					value="Back" />
+	</h:form>
 	</f:view>
-	<a href='<c:url value="/faces/admin.jsp" />'>Back</a>
 </body>
 </html>
