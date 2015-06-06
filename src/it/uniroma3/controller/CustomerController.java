@@ -47,7 +47,7 @@ public class CustomerController {
 	public String login(){
 		String nextPage = "";
 		try{
-			Customer customer = customerFacade.getCustomerByEmail(this.email);
+		    this.customer = customerFacade.getCustomerByEmail(this.email);
 			if(customer.verifyPassword(this.password)){
 				nextPage = "customerWelcomePage";                                            //da implementare customer welcome page
 			} else nextPage = "customerLogin";
