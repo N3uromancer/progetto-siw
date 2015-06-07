@@ -11,7 +11,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "orders_id")
 	private List<OrderLine> orderLines;
 	
