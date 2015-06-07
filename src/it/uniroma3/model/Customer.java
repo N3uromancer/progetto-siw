@@ -48,6 +48,13 @@ public class Customer {
 		this.lastName=lastName;
 	}
 	
+	public Customer(String firstName, String lastName, String email, String password){
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.email = email;
+		this.password = password;
+	}
+	
 	public String getPassword() {
 		return password;
 	}
@@ -69,7 +76,7 @@ public class Customer {
 	}
 	
 	
-	public String getEMail(){
+	public String getEmail(){
 		return this.email;
 	}
 	
