@@ -104,6 +104,9 @@ public class Customer {
 		this.address = new Address();
 		this.address = newAddress;
 	}
+	public Address getAddress(){
+		return this.address;
+	}
 	
 	public void addOrder(Order newOrder){
 		this.orders.add(newOrder);
