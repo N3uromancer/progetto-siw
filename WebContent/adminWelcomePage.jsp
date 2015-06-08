@@ -30,6 +30,9 @@
 						value="List all Customers" />
 				</h:form>
 			</li>
+			<li>
+				<a href='<c:url value="/faces/orderCheck.jsp" />'>Check orders</a>
+			</li>
 		</ul>
 	</f:view>
 </body>

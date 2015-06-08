@@ -41,6 +41,11 @@ public class Address {
 		this.country = country;
 	}
 	
+	public Long getId(){
+		return this.id;
+	}
+	
+	
 	public String getStreet(){
 		return this.street;
 	}
