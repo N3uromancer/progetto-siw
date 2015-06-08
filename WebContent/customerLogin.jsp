@@ -11,7 +11,7 @@
 <h1>Customer Login</h1>
 <f:view>
 <h:form>
-    <div>Email: <h:inputText value="#{customerController.email}" 
+    <div>First name: <h:inputText value="#{customerController.firstName}" 
                      required="true"
                      requiredMessage="Name is mandatory"
                      id="email"/> <h:message for="email" />
