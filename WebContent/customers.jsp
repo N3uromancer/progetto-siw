@@ -13,21 +13,21 @@
 <h:form>
 <table>
 	<tr>
-		<th>First name</th><th>Last name</th>
+		<th>First name</th><th>Last name</th><th>Details</th>
 	</tr>
 	<c:forEach var="customer" items="#{customerController.customers}">
 		<tr>
-		<td>
-			<h:commandLink action="#{customerController.findCustomer}" value="#{customer.firstName}">
-				<f:param name="id" value="#{customer.id}" />
-			</h:commandLink>
-		</td>
-		<td>${customer.lastName}</td>
+			<td>${customer.firstName}</td>
+			<td>${customer.lastName}</td>
+			<td>
+				<h:commandLink action="#{customerController.findCustomer}" value="+">
+					<f:param name="id" value="#{customer.id}" />
+				</h:commandLink>
+			</td>
 		</tr>
 	</c:forEach>
 </table>
 </h:form>
-
 </f:view>
 </body>
 </html>
