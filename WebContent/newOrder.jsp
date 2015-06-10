@@ -9,7 +9,12 @@
 </head>
 <body>
 <f:view>
-
+	<f:view>
+		<h1>Order has been created</h1>
+	    <h:form>
+	    	<h:commandLink action = "#{productController.listProductsForCustomer}" value = "products list"/>
+	    </h:form>	
+	</f:view>
 </f:view>
 </body>
 </html>
