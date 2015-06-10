@@ -19,7 +19,8 @@ public class Order {
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
-	public Order(){
+	public Order(Customer customer){
+		this.customer = customer;
 		this.orderLines = new LinkedList<OrderLine>();
 	}	
 	
