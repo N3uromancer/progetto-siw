@@ -24,6 +24,10 @@ public class Order {
 		this.orderLines = new LinkedList<OrderLine>();
 	}	
 	
+	public Order(){
+		this.orderLines = new LinkedList<OrderLine>();
+	}	
+	
 	public Customer getCustomer(){
 		return this.customer;
 	}
