@@ -5,24 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Customers</title>
+<title>Orders</title>
 </head>
 <body>
+<h1>Orders</h1>
 <f:view>
-<h1>Customers</h1>
 <h:form>
-<table>
+<table border="solid">
 	<tr>
-		<th>Id</th><th>Last name</th><th>Details</th>
+		<th>ID</th><th>Customer</th><th>Address</th>
 	</tr>
 	<c:forEach var="order" items="#{orderController.orders}">
 		<tr>
 			<td>${order.id}</td>
-			<td></td>
+			<td>${order.customer.firstName} ${order.customer.lastName}</td>
 			<td>
-				<h:commandLink action="#{orderController.findAddress}" value="Address">
-					<f:param name="id" value="#{order.id}" />
-				</h:commandLink>
+				${order.customer.address.street}, ${order.customer.address.city} - ${order.customer.address.country} (${order.customer.address.zipCode}) 
 			</td>
 		</tr>
 	</c:forEach>
