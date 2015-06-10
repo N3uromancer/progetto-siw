@@ -13,7 +13,7 @@
 	<f:view>
 		Welcome :${customerController.customer.firstName}<br />
 		<h:form>
-			<h:commandLink action = "#{orderController.createOrder}" value = "Create a new order"></h:commandLink>
+			<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
 		</h:form>
 	</f:view>
 </body>
