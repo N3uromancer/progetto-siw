@@ -35,4 +35,16 @@ public class Order {
 	public void addOrderLine(OrderLine newOrderLine){
 		orderLines.add(newOrderLine);
 	}
+
+	public List<OrderLine> getOrderLines() {
+		return orderLines;
+	}
+
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
+	}
+
+	public long getId() {
+		return id;
+	}
 }
