@@ -11,12 +11,12 @@
 <h1>Customer Login</h1>
 <f:view>
 <h:form>
-    <div>First name: <h:inputText value="#{customerController.firstName}" 
+    <div>Email: <h:inputText value="#{customerController.email}" 
                      required="true"
-                     requiredMessage="Name is mandatory"
+                     requiredMessage="Email is mandatory"
                      id="email"/> <h:message for="email" />
 	</div>
-    <div>Password <h:inputSecret value="#{customerController.password}" 
+    <div>Password: <h:inputSecret value="#{customerController.password}" 
                      required="true"
                      requiredMessage="Password is mandatory"
                      id="password"/> <h:message for="password" />
