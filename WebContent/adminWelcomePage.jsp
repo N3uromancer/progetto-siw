@@ -31,10 +31,12 @@
 				</h:form>
 			</li>
 			<li>
-				<a href='<c:url value="/faces/orderCheck.jsp" />'>Check orders</a>
+				<h:form>
+					<h:commandLink action="#{orderController.listOrders}"
+						value="List all Orders" />
+				</h:form>
 			</li>
 		</ul>
 	</f:view>
 </body>
 </html>
-
