@@ -48,9 +48,9 @@ public class OrderController {
 		return "newOrder";
 	}
 	
-	public String createOrder(){
+	public String createOrderSimple(){
 		this.currentOrder = orderFacade.createOrder();
-		return "order";
+		return "newOrder";
 	}
 	
 	public String completeOrder(){
