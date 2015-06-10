@@ -34,6 +34,10 @@ public class Order {
 		this.state="open";
 	}	
 	
+	public Order(){
+		this.orderLines = new LinkedList<OrderLine>();
+	}	
+	
 	public Customer getCustomer(){
 		return this.customer;
 	}

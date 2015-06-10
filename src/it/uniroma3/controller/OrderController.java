@@ -48,6 +48,11 @@ public class OrderController {
 		return "newOrder";
 	}
 	
+	public String createOrderSimple(){
+		this.currentOrder = orderFacade.createOrder();
+		return "newOrder";
+	}
+	
 	public String completeOrder(){
 		this.currentOrder = null;
 		return "order";

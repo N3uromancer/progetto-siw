@@ -21,6 +21,12 @@ public class OrderFacade {
     	return order;
     }
     
+    public Order createOrder(){
+    	Order order = new Order();
+    	em.persist(order);
+    	return order;
+    }
+    
 	public void updateOrder(Order order) {
         em.merge(order);
 	}
