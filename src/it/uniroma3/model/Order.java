@@ -18,10 +18,20 @@ public class Order {
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
+	
+	/*
+	 * la variabile può assumere il valore:
+	 * 		-"open" se l'ordine non è ancora chiuso;
+	 * 		-"close" se l'ordine è concluso ma inevaso;
+	 * 		-"processed" se l'ordine è evaso.
+	 */
+	@Column
+	private String state;
 
 	public Order(Customer customer){
 		this.customer = customer;
 		this.orderLines = new LinkedList<OrderLine>();
+		this.state="open";
 	}	
 	
 	public Customer getCustomer(){
@@ -47,4 +57,12 @@ public class Order {
 	public long getId() {
 		return id;
 	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}	
 }
