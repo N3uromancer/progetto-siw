@@ -8,8 +8,12 @@
 </head>
 <body>
 	<f:view>
-	First Name : ${customerController.customer.firstName} <br />
-	Last Name : ${customerController.customer.lastName} <br />
+	<ul>
+		<li>Id : ${customerController.customer.id}</li>
+		<li>First Name : ${customerController.customer.firstName}</li>
+		<li>Last Name : ${customerController.customer.lastName}</li>
+		<li>Email : ${customerController.customer.email}</li>
+	</ul>
 	<h:form>
 		<h:commandLink action="#{customerController.listCustomers}"
 					value="Back" />
