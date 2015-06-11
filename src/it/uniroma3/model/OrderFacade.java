@@ -32,13 +32,13 @@ public class OrderFacade {
 	}
 	
 	public Address findAddressByOrderId(Long id){
-		Query q = em.createQuery("SELECT o.customer.address FROM Order o WHERE o. = :id");
+		Query q = em.createQuery("SELECT o.customer.address FROM Order o WHERE o.id = :id");
 		q.setParameter("id", id);
 		Address address = (Address)q.getSingleResult();
 		return address;
 	}
 	
-    private void deleteOrder(Order order) {
+    public void deleteOrder(Order order) {
         em.remove(order);
     }
     
@@ -47,6 +47,18 @@ public class OrderFacade {
         cq.select(cq.from(Order.class));
         List<Order> orders = em.createQuery(cq).getResultList();
 		return orders;
+	}
+	
+	public boolean processOrder(Order order){
+		//da fare
+		return true;
+	}
+	
+	public Order getOrder(Long id){
+		Query q = em.createQuery("SELECT o FROM Order o WHERE o.id = :id");
+		q.setParameter("id", id);
+		Order order = (Order)q.getSingleResult();
+		return order;
 	}
 
 	public List<Order> getUnprocessedOrders(){

@@ -20,6 +20,8 @@ public class OrderController {
 	
 	private Order currentOrder;
 	
+	private Order order;
+	
 	private Customer customer;
 	
 	private float unitPrice;
@@ -75,6 +77,13 @@ public class OrderController {
 	public String listOrders() {
 		this.orders = orderFacade.getAllOrders();
 		return "orders"; 
+	}
+	
+	public String processOrder(long id){
+		this.order = this.orderFacade.getOrder(id);
+		boolean isProcessed = this.orderFacade.processOrder(this.order);
+		if(isProcessed) return "/*Da creare*/";
+		else return "/*Da creare*/";
 	}
 	
 	public String listUnprocessedOrders(){
@@ -178,6 +187,13 @@ public class OrderController {
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
-	
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 	
 }
