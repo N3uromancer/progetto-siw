@@ -22,6 +22,10 @@ public class ProductFacade {
 	    Product product = em.find(Product.class, id);
 		return product;
 	}
+	public Product getProductByCode(String code) {
+	    Product product = em.find(Product.class, code);
+		return product;
+	}
 	
 	public List<Product> getAllProducts() {
         CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
