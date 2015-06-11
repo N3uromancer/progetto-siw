@@ -69,6 +69,11 @@ public class OrderController {
 		this.orders = orderFacade.getAllOrders();
 		return "orders"; 
 	}
+	
+	public String listUnprocessedOrders(){
+		this.orders = orderFacade.getUnprocessedOrders();
+		return "unprocessedOrders";
+	}
 	public String listOrderLines(){
 		this.orderLines = this.orderLineFacade.getOrderLinesByOrderId(id);
 		return "newOrder";
