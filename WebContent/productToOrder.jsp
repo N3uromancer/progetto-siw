@@ -12,7 +12,15 @@
 <body>
 	<f:view>
 		<h:form>
-			<h:inputText />
+			Product code:<h:inputText value="#{orderController.productCode}" 
+                     required="true"
+                     requiredMessage="code is mandatory"
+                     id="code"/> <h:message for="code" />
+            Product quantity:<h:inputText value="#{orderController.quantity}" 
+                     required="true"
+                     requiredMessage="quantity is mandatory"
+                     id="quantity"/> <h:message for="quantity" />
+            <h:commandButton value="Submit"  action="#{orderController.addOrderLine}"/>          
 		</h:form>
 	</f:view>
 </body>
