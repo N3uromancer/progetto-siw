@@ -34,12 +34,13 @@ public class Customer {
 		this.orders = new LinkedList<Order>();
 	}
 	
-	public Customer(String firstname, String lastname, String email, int phoneNumber, String password){
+	public Customer(String firstname, String lastname, String email, String password, int phoneNumber){
 		this.firstName = firstname;
 		this.lastName = lastname;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.password = password;
+		this.orders = new LinkedList<Order>();
 		
 	}
 	
