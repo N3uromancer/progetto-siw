@@ -32,7 +32,7 @@ public class OrderFacade {
 	}
 	
 	public Address findAddressByOrderId(Long id){
-		Query q = em.createQuery("SELECT o FROM Order o WHERE o.customer.address.id = :id");
+		Query q = em.createQuery("SELECT o.customer.address FROM Order o WHERE o. = :id");
 		q.setParameter("id", id);
 		Address address = (Address)q.getSingleResult();
 		return address;

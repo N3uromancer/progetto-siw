@@ -4,19 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Product</title>
+	<title>Address</title>
 </head>
 <body>
+<h1>Address of ${orderController.customer.firstName} ${orderController.lastName}</h1>
 	<f:view>
-		<h1>${orderController.address.id}</h1>
+		<h1>${orderController.customer.address.id}</h1>
 		<h2>Details</h2>
-		<div>Street: ${orderController.address.street}</div>
-		<div>City: ${orderController.address.city}</div>
-		<div>Country: ${orderController.address.country}</div>
-		<div>State: ${orderController.address.state}</div>
-		<div>Zipcode: ${orderController.address.zipcode}</div>
+		<div>Street: ${orderController.customer.address.street}</div>
+		<div>City: ${orderController.customer.address.city}</div>
+		<div>Country: ${orderController.customer.address.country}</div>
+		<div>State: ${orderController.customer.address.state}</div>
+		<div>Zipcode: ${orderController.customer.address.zipcode}</div>
 		<h:form>
-			<h:commandLink action="#{productController.listOrders}"
+			<h:commandLink action="#{orderController.listOrders}"
 						value="Back to order list" />
 		</h:form>
 	</f:view>
