@@ -32,6 +32,8 @@ public class OrderController {
 
 	private int quantity;
 	
+	private String productCode;
+	
 	private Address address;
 	
 	@EJB(beanName="orderFacade")
@@ -156,4 +158,14 @@ public class OrderController {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public String getProductCode() {
+		return productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+	
+	
 }
