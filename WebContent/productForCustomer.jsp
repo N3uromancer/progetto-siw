@@ -30,7 +30,7 @@
 	</c:forEach>
 </table>
 </h:form>
-<a href='<c:url value="/faces/productToOrder.jsp" />'>Back</a>
+<a href='<c:url value="/faces/productToOrder.jsp" />'>Add product</a>
 </f:view>
 </body>
 </html>

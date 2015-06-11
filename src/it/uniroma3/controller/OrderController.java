@@ -42,6 +42,9 @@ public class OrderController {
 	@EJB(beanName="orderLineFacade")
 	private OrderLineFacade orderLineFacade;
 	
+	@EJB//(beanName="productFacade")
+	private ProductFacade productFacade;
+	
 	
 	public String createOrder(Customer customer){
 		this.customer = customer;
@@ -52,6 +55,7 @@ public class OrderController {
 	
 	public String createOrderSimple(){
 		this.currentOrder = orderFacade.createOrder();
+		this.orderLines = new ArrayList<OrderLine>();
 		return "newOrder";
 	}
 	
@@ -61,8 +65,11 @@ public class OrderController {
 	}
 	
 	public String addOrderLine(){
+		this.product = this.productFacade.getProductByCode(productCode);
 		this.orderLine = this.orderLineFacade.createOrderLine(unitPrice, quantity, product);
-		return "newOrder";
+		//this.orderLines.add(this.orderLine);
+		this.orderFacade.updateOrder(this.currentOrder);
+		return "productAdded";
 	}
 	
 	public String listOrders() {
