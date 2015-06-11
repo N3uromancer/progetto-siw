@@ -49,6 +49,12 @@ public class OrderFacade {
 		return orders;
 	}
 
+	public List<Order> getUnprocessedOrders(){
+		Query q = em.createQuery("SELECT o FROM Order o WHERE o.state = 'close'");
+		List<Order> orders = (List<Order>)q.getResultList();
+		return orders;
+	}
+	
 	public List<Order> getAllOrdersByCustomer(Customer customer) {
 		Query q = em.createQuery("SELECT o FROM Order o WHERE o.customer.email = :email");
 		q.setParameter("email", customer.getEmail());

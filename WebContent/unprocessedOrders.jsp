@@ -13,18 +13,12 @@
 <h:form>
 <table border="solid">
 	<tr>
-		<th>ID</th><th>Customer</th><th>Address</th><th>Order state</th>
+		<th>ID</th><th>Action</th>
 	</tr>
 	<c:forEach var="order" items="#{orderController.orders}">
 		<tr>
 			<td>${order.id}</td>
-			<td>${order.customer.firstName} ${order.customer.lastName}</td>
-			<td>
-				${order.customer.address.street}, ${order.customer.address.city} - ${order.customer.address.country} (${order.customer.address.zipCode}) 
-			</td>
-			<td>
-			${order.state}
-			</td>
+			<td>Process</td>
 		</tr>
 	</c:forEach>
 </table>

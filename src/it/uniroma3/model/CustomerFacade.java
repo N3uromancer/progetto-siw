@@ -19,6 +19,12 @@ import java.util.List;
 			return customer;
 		}
 		
+		public Customer createCustomer(String firstName, String lastName, String email, String password) {
+			Customer customer = new Customer(firstName, lastName, email, password);
+			em.persist(customer);
+			return customer;
+		}
+		
 		public Customer getCustomerByEmail(String email) {
 			Query q = em.createQuery("SELECT c FROM Customer c WHERE c.email = :email");
 			q.setParameter("email", email);

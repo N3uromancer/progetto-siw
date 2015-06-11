@@ -36,6 +36,12 @@
 						value="List all Orders" />
 				</h:form>
 			</li>
+			<li>
+				<h:form>
+					<h:commandLink action="#{orderController.listUnprocessedOrders}"
+						value="Process Orders" />
+				</h:form>
+			</li>
 		</ul>
 	</f:view>
 </body>

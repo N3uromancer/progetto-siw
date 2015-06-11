@@ -20,6 +20,16 @@
                      requiredMessage="Last name is mandatory"
                      id="lastName"/> <h:message for="lastName" />
 	</div>
+    <div>Email: <h:inputText value="#{customerController.email}" 
+                     required="true"
+                     requiredMessage="Email is mandatory"
+                     id="email"/> <h:message for="email" />
+	</div>
+    <div>Password: <h:inputSecret value="#{customerController.password}" 
+                     required="true"
+                     requiredMessage="Password is mandatory"
+                     id="password"/> <h:message for="password" />
+	</div>
 	<div>
 		<h:commandButton value="Submit"  action="#{customerController.createCustomer}"/>
 	</div>
