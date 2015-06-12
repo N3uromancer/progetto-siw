@@ -27,6 +27,10 @@ public class Order {
 	 */
 	@Column
 	private String state;
+	
+	@Column
+	@Temporal (TemporalType.TIMESTAMP)
+	private Calendar processingDate;
 
 	public Order(Customer customer){
 		this.customer = customer;
@@ -68,5 +72,13 @@ public class Order {
 
 	public void setState(String state) {
 		this.state = state;
-	}	
+	}
+
+	public Calendar getProcessingDate() {
+		return processingDate;
+	}
+
+	public void setProcessingDate(Calendar processingDate) {
+		this.processingDate = processingDate;
+	}
 }
