@@ -6,10 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Customer Welcome Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Customer Welcome Page</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 		Welcome :${customerController.customer.firstName}<br />
 		<h:form>

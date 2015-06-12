@@ -6,8 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Operation info</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 <h2>Product has been added to your order</h2>
 <f:view>
 <h:form>

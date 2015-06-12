@@ -4,12 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>New Customer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>New Customer</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
 <f:view>
 <h:form>
+	<jsp:include page="header.jsp" />
     <div>First name: <h:inputText value="#{customerController.firstName}" 
                      required="true"
                      requiredMessage="First name is mandatory"

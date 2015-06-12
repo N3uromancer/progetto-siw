@@ -6,10 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Progetto SIW</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Progetto SIW</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 		<h1>Progetto SIW</h1>
 		<h3>di Gabriele Di Bonaventura e Igor Proshchenko.</h3>

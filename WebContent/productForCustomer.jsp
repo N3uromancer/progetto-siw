@@ -8,8 +8,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Products list</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 <h1>Products</h1>
 <h:form>

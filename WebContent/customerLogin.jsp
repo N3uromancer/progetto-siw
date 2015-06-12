@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Customer Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Customer Login</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 <h1>Customer Login</h1>
 <f:view>
 <h:form>

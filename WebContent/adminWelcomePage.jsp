@@ -6,10 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Area Admin - Progetto SIW</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Area Admin - Progetto SIW</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 		<h1>Area Admin</h1>
 		<ul>

@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>New Product</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>New Product</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 <f:view>
 <h:form>
     <div>Name: <h:inputText value="#{productController.name}" 

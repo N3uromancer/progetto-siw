@@ -5,8 +5,10 @@
 <html>
 <head>
 	<title>Product</title>
+		<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 		<h1>${productController.product.name}</h1>
 		<h2>Details</h2>

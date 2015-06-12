@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Current Order</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Current Order</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 		<h1>Order has been created</h1>
 	    <h:form>

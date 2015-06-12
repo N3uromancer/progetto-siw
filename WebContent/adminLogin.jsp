@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Admin Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Admin Login</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 <h1>Admin Login</h1>
 <f:view>
 <h:form>
