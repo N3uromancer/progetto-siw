@@ -18,7 +18,11 @@
 	<c:forEach var="order" items="#{orderController.orders}">
 		<tr>
 			<td>${order.id}</td>
-			<td>Process</td>
+			<td>
+				<h:commandLink action="#{orderController.processOrder}" value="Process">
+					<f:param name="id" value="#{order.id}" />
+				</h:commandLink>			
+			</td>
 		</tr>
 	</c:forEach>
 </table>
