@@ -62,6 +62,7 @@ public class OrderController {
 	}
 	
 	public String completeOrder(){
+		this.currentOrder.setState("close");
 		this.currentOrder = null;
 		return "order";
 	}
