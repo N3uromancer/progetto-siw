@@ -4,9 +4,11 @@ import it.uniroma3.model.*;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-//import javax.faces.bean.SessionScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
+@SessionScoped
 public class AdminController {
 	
 	@ManagedProperty(value="#{param.id}")
@@ -23,6 +25,7 @@ public class AdminController {
 		try{
 			Admin admin = adminFacade.getAdminByName(this.name);
 			if(admin.verifyPassword(this.password)){
+				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("loggedAdmin", loggedAdmin);
 				nextPage = "adminWelcomePage";
 				this.setLoggedAdmin(admin);
 			} else nextPage = "adminLogin";
@@ -58,9 +61,9 @@ public class AdminController {
 	}
 	
 	public Admin getLoggedAdmin(){
-		return this.loggedAdmin;
+		Admin admin = (Admin) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get(loggedAdmin);
+		return admin;
 	}
-	
 	public void setLoggedAdmin(Admin admin){
 		this.loggedAdmin = admin;
 	}
