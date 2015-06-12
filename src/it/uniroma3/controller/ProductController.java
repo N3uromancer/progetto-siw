@@ -19,6 +19,7 @@ public class ProductController {
 	private String description;
 	private String code;
 	private Product product;
+	private int quantity;
 	private List<Product> products;
 	
 	@EJB
@@ -103,6 +104,14 @@ public class ProductController {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }
 

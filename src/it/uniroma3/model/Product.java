@@ -22,6 +22,8 @@ import java.util.*;
 	@Column(nullable = false)
 	private String code;
 	
+	private int quantity;
+	
 	@ManyToMany(mappedBy = "products")
 	private List<Provider> providers;
 	
@@ -85,5 +87,20 @@ import java.util.*;
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public List<Provider> getProviders() {
+		return providers;
+	}
+
+	public void setProviders(List<Provider> providers) {
+		this.providers = providers;
+	}
 }
