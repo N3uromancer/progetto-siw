@@ -4,12 +4,13 @@ import it.uniroma3.model.*;
 
 import java.util.List;
 
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class CustomerController {
 	
 	@ManagedProperty(value="#{param.id}")

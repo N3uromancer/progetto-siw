@@ -36,6 +36,9 @@ public class OrderController {
 	
 	private String productCode;
 	
+	@ManagedProperty(value="#{sessionScope['customerController'].customer}")
+	private Customer currentCustomer;
+	
 	private Address address;
 	
 	@EJB(beanName="orderFacade")
@@ -50,13 +53,13 @@ public class OrderController {
 	
 	public String createOrder(Customer customer){
 		this.customer = customer;
-		this.currentOrder = orderFacade.createOrder(this.customer);
+		this.currentOrder = orderFacade.createOrder(customer);
 		this.orderLines = new ArrayList<OrderLine>();
 		return "newOrder";
 	}
 	
 	public String createOrderSimple(){
-		this.currentOrder = orderFacade.createOrder();
+		this.currentOrder = orderFacade.createOrder(this.customer);
 		this.orderLines = new ArrayList<OrderLine>();
 		return "newOrder";
 	}
@@ -196,5 +199,13 @@ public class OrderController {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	
+
+	public Customer getCurrentCustomer() {
+		return currentCustomer;
+	}
+
+	public void setCurrentCustomer(Customer currentCustomer) {
+		this.currentCustomer = currentCustomer;
+	}
+
 }
