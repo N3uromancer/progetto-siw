@@ -82,8 +82,8 @@ public class OrderController {
 	public String processOrder(long id){
 		this.order = this.orderFacade.getOrder(id);
 		boolean isProcessed = this.orderFacade.processOrder(this.order);
-		if(isProcessed) return "/*Da creare*/";
-		else return "/*Da creare*/";
+		if(isProcessed) return "orderProcessed";
+		else return "orderNotProcessed";
 	}
 	
 	public String listUnprocessedOrders(){
