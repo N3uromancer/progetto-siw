@@ -4,7 +4,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ejb.Stateless;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
@@ -50,8 +52,18 @@ public class OrderFacade {
 	}
 	
 	public boolean processOrder(Order order){
-		//da fare
-		return true;
+		boolean isProcessed = true;
+		for(OrderLine ol : order.getOrderLines()){
+			Product product = ol.getProduct();
+			if(product.getQuantity()<ol.getQuantity()){
+				isProcessed = false;
+			}
+		}
+		if(isProcessed){
+			order.setProcessingDate(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
+			order.setState("processed");
+		}
+		return isProcessed;
 	}
 	
 	public Order getOrder(Long id){
