@@ -35,11 +35,12 @@ public class Order {
 	public Order(Customer customer){
 		this.customer = customer;
 		this.orderLines = new LinkedList<OrderLine>();
-		this.state="open";
+		this.state = "open";
 	}	
 	
 	public Order(){
 		this.orderLines = new LinkedList<OrderLine>();
+		this.state = "open";
 	}	
 	
 	public Customer getCustomer(){
