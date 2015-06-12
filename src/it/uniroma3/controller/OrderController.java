@@ -47,7 +47,7 @@ public class OrderController {
 	@EJB(beanName="orderLineFacade")
 	private OrderLineFacade orderLineFacade;
 	
-	@EJB//(beanName="productFacade")
+	@EJB(beanName="productFacade")
 	private ProductFacade productFacade;
 	
 	

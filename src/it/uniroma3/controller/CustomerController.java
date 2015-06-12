@@ -5,9 +5,10 @@ import it.uniroma3.model.*;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.enterprise.context.SessionScoped;
+//import javax.enterprise.context.SessionScoped;
 
 @ManagedBean
 @SessionScoped
