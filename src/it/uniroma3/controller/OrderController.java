@@ -5,15 +5,16 @@ import it.uniroma3.model.*;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-//import javax.faces.bean.SessionScoped;
+import javax.faces.bean.SessionScoped;
 
 import java.util.List;
-import java.util.ArrayList;;
+
 
 @ManagedBean
+@SessionScoped
 public class OrderController {
 	
-	@ManagedProperty(value="#{param.id}")
+	//@ManagedProperty(value="#{param.id}")
 	private Long id;
 	
 	private List<OrderLine> orderLines;
@@ -47,20 +48,18 @@ public class OrderController {
 	@EJB(beanName="orderLineFacade")
 	private OrderLineFacade orderLineFacade;
 	
-	@EJB(beanName="productFacade")
+	@EJB
 	private ProductFacade productFacade;
 	
 	
 	public String createOrder(Customer customer){
 		this.customer = customer;
 		this.currentOrder = orderFacade.createOrder(customer);
-		this.orderLines = new ArrayList<OrderLine>();
 		return "newOrder";
 	}
 	
 	public String createOrderSimple(){
-		this.currentOrder = orderFacade.createOrder(this.customer);
-		this.orderLines = new ArrayList<OrderLine>();
+		this.currentOrder = orderFacade.createOrder(this.currentCustomer);
 		return "newOrder";
 	}
 	
@@ -72,8 +71,8 @@ public class OrderController {
 	
 	public String addOrderLine(){
 		this.product = this.productFacade.getProductByCode(productCode);
-		this.orderLine = this.orderLineFacade.createOrderLine(unitPrice, quantity, product);
-		//this.orderLines.add(this.orderLine);
+		OrderLine newOrderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
+		this.currentOrder.addOrderLine(newOrderLine);
 		this.orderFacade.updateOrder(this.currentOrder);
 		return "productAdded";
 	}
