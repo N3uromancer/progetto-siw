@@ -44,6 +44,12 @@
 						value="Process Orders" />
 				</h:form>
 			</li>
+			<li>
+				<h:form>
+					<h:commandLink action="#{adminController.logout}"
+									value="Logout" />
+				</h:form>
+			</li>
 		</ul>
 	</f:view>
 </body>

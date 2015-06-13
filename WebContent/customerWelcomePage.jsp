@@ -13,9 +13,13 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<f:view>
-		Welcome :${customerController.customer.firstName}<br />
+		Welcome: ${customerController.customer.firstName}<br />
 		<h:form>
 			<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
+		</h:form>
+		<h:form>
+			<h:commandLink action="#{customerController.logout}"
+						value="Logout" />
 		</h:form>
 	</f:view>
 </body>
