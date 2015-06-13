@@ -62,6 +62,12 @@ public class AdminController {
 		this.password = password;
 	}
 	
+	public String logout(){
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		this.loggedAdmin = null;
+		return "adminLogin";
+	}
+	
 	public Admin getLoggedAdmin(){
 		this.loggedAdmin = (Admin) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loggedAdmin");
 		return loggedAdmin;

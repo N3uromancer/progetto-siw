@@ -5,16 +5,17 @@ import it.uniroma3.model.*;
 import java.util.List;
 
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-//import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
 
 @ManagedBean
 @SessionScoped
 public class CustomerController {
 	
-	@ManagedProperty(value="#{param.id}")
+	//@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private String firstName;
 	private String lastName;
@@ -53,7 +54,7 @@ public class CustomerController {
 		try{
 		    this.customer = customerFacade.getCustomerByEmail(this.email);
 			if(customer.verifyPassword(this.password)){
-				nextPage = "customerWelcomePage";                                            //da implementare customer welcome page
+				nextPage = "customerWelcomePage";
 			} else nextPage = "customerLogin";
 		} 	
 		catch(Exception e){
@@ -61,7 +62,12 @@ public class CustomerController {
 		}
 		return nextPage;
 	}
-
+	
+	public String logout(){
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		this.customer = null;
+		return "customerLogin";
+	}
 
 	public Long getId() {
 		return id;
