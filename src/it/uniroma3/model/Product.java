@@ -67,11 +67,11 @@ import java.util.*;
         this.description = description;
     }
     
-    public Float getUnitPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setUnitPrice(Float price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 	
