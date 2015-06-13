@@ -42,21 +42,13 @@
 								<c:if test="${customerController.customer != null}">
 									<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
-									<li><a href="#"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
+									<li><a href="customerWelcomePage.jsp"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
 								</c:if>
 								<c:if test="${adminController.loggedAdmin != null}">
 									<li><a href="#"><i class="fa fa-crosshairs"></i> Product</a></li>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
 									<li><a href="#"><i class="fa fa-user"></i> Customer</a></li>
-									<li><a href="#"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>
-									<li>
-										<f:view>
-											<h:form>
-												<h:commandLink action="#{adminController.logout}"
-													value="Logout" />
-											</h:form>
-										</f:view>
-									</li>									
+									<li><a href="adminWelcomePage.jsp"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>							
 								</c:if>
 								<c:if test="${customerController.customer == null && adminController.loggedAdmin == null}">
 									<li><a href='<c:url value="/faces/adminLogin.jsp" />'><i class="fa fa-lock"></i> Admin Login</a></li>								
