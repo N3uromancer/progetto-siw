@@ -14,9 +14,16 @@
 	<jsp:include page="header.jsp" />
 	<f:view>
 		Welcome: ${customerController.customer.firstName}<br />
-		<h:form>
-			<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
-		</h:form>
+		<c:if test="${orderController.currentOrder==null}">
+			<h:form>
+				<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
+			</h:form>
+		</c:if>
+		<c:if test="${orderController.currentOrder!=null}">
+			<h:form>
+				<h:commandLink action = "#{productController.listProductsForCustomer}" value = "Add product to your current order"></h:commandLink>
+			</h:form>
+		</c:if>
 		<h:form>
 			<h:commandLink action="#{customerController.logout}"
 						value="Logout" />
