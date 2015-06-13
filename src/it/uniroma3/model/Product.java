@@ -14,9 +14,9 @@ import java.util.*;
 	@Column(nullable = false)
 	private String name;
 
-	private Float price;
+	private Float unitPrice;
+	
 	@Column(length = 2000)
-
 	private String description;
 
 	@Column(nullable = false)
@@ -32,7 +32,7 @@ import java.util.*;
 
 	public Product(String name, Float price, String description, String code) {
         this.name = name;
-        this.price = price;
+        this.unitPrice = price;
         this.description = description;
         this.code = code;
 }
@@ -67,12 +67,12 @@ import java.util.*;
         this.description = description;
     }
     
-    public Float getPrice() {
-        return price;
+    public Float getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setPrice(Float price) {
-        this.price = price;
+    public void setUnitPrice(Float price) {
+        this.unitPrice = price;
     }
 	
     public boolean equals(Object obj) {
