@@ -3,7 +3,9 @@ package it.uniroma3.model;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+
 import java.util.List;
 
 @Stateless
@@ -23,7 +25,9 @@ public class ProductFacade {
 		return product;
 	}
 	public Product getProductByCode(String code) {
-	    Product product = em.find(Product.class, code);
+		Query q = em.createQuery("SELECT p FROM Product p WHERE p.code = :code");
+		q.setParameter("code", code);
+		Product product = (Product) q.getSingleResult();
 		return product;
 	}
 	
