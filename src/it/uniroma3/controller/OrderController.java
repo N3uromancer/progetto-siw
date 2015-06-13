@@ -72,9 +72,10 @@ public class OrderController {
 	}
 	
 	public String addOrderLine(){
-		this.product = this.productFacade.getProductByCode(productCode);
+		try{
+			this.product = this.productFacade.getProductByCode(productCode);
 		//se non esiste un prodotto con quel codice ritorna sulla stessa view
-		if(this.product==null) return "productToOrder";
+		} catch(Exception e) {return "productToOrder";}
 		this.orderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
 		this.currentOrder.addOrderLine(orderLine);
 		this.orderFacade.updateOrder(this.currentOrder);
