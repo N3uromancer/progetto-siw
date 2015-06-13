@@ -9,7 +9,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li>Progetto per il corso di Sistemi Informativi su Web</li>
-								<li><i>Gabriele Di Bonaventura & Igor Proshchenko</i></li>
+								<li><i>Gabriele Di Bonaventura e Igor Proshchenko</i></li>
 							</ul>
 						</div>
 					</div>
@@ -33,22 +33,30 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="../WebContent/images/home/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<c:if test="${customerController.customer != null}">
-									<li><a href="#"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
 									<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
+									<li><a href="#"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
 								</c:if>
 								<c:if test="${adminController.loggedAdmin != null}">
-									<li><a href="#"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>
 									<li><a href="#"><i class="fa fa-crosshairs"></i> Product</a></li>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
-									<li><a href="#"><i class="fa fa-user"></i> Customer</a></li>									
+									<li><a href="#"><i class="fa fa-user"></i> Customer</a></li>
+									<li><a href="#"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>
+									<li>
+										<f:view>
+											<h:form>
+												<h:commandLink action="#{adminController.logout}"
+													value="Logout" />
+											</h:form>
+										</f:view>
+									</li>									
 								</c:if>
 								<c:if test="${customerController.customer == null && adminController.loggedAdmin == null}">
 									<li><a href='<c:url value="/faces/adminLogin.jsp" />'><i class="fa fa-lock"></i> Admin Login</a></li>								
@@ -60,3 +68,4 @@
 				</div>
 			</div>
 		</div><!--/header-middle-->
+	</header>
