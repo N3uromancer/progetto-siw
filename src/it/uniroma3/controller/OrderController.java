@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import java.util.List;
 
@@ -65,14 +66,17 @@ public class OrderController {
 	
 	public String completeOrder(){
 		this.currentOrder.setState("close");
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove(currentOrder);
 		this.currentOrder = null;
-		return "order";
+		return "customerWelcomePage";
 	}
 	
 	public String addOrderLine(){
 		this.product = this.productFacade.getProductByCode(productCode);
-		OrderLine newOrderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
-		this.currentOrder.addOrderLine(newOrderLine);
+		//se non esiste un prodotto con quel codice ritorna sulla stessa view
+		if(this.product==null) return "productToOrder";
+		this.orderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
+		this.currentOrder.addOrderLine(orderLine);
 		this.orderFacade.updateOrder(this.currentOrder);
 		return "productAdded";
 	}
