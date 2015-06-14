@@ -20,8 +20,8 @@
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Gabriele Di Bonaventura</h2>
 	    				<address>
-							<p>Mat: 439454</p>
-							<p>Email: gabdibonaventura@gmail.com</p>
+							<p><label>Mat:</label> 439454</p>
+							<p><label>Email:</label> gabdibonaventura@gmail.com</p>
 	    				</address>
 	    			</div>
     			</div>
@@ -29,8 +29,8 @@
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Igor Proshchenko</h2>
 	    				<address>
-							<p>Mat: </p>
-							<p>Email: </p>
+							<p><label>Mat:</label> </p>
+							<p><label>Email:</label> </p>
 	    				</address>
 	    			</div>
     			</div>   			
