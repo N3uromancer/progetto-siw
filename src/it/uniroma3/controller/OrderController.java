@@ -65,7 +65,8 @@ public class OrderController {
 	}
 	
 	public String completeOrder(){
-		this.currentOrder.setState("close");
+		this.currentOrder = orderFacade.setState(this.currentOrder, "close");
+		orderFacade.updateOrder(this.currentOrder);
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove(currentOrder);
 		this.currentOrder = null;
 		return "customerWelcomePage";
