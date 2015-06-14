@@ -89,14 +89,13 @@ public class OrderController {
 	}
 	
 	public String deleteOrder(){
+		this.order = this.orderFacade.getOrderFromIdInRequestMap();
 		orderFacade.deleteOrder(this.order);
 		return "orders";
 	}
 	
 	public String processOrder(){
-		String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("orderId");
-		long id = Long.valueOf(stringId).longValue();
-		this.order = this.orderFacade.getOrder(id);
+		this.order = this.orderFacade.getOrderFromIdInRequestMap();
 		boolean isProcessed = this.orderFacade.processOrder(this.order);
 		if(isProcessed) {
 			orderFacade.updateOrder(this.order);
