@@ -85,6 +85,11 @@ public class OrderFacade {
 		List<Order> orders = (List<Order>)q.getResultList();
 		return orders;
 	}
+	
+	public Order setState(Order order, String state){
+	order.setState(state);
+	return order;
+	}
     
 	public EntityManager getEm() {
 		return em;
