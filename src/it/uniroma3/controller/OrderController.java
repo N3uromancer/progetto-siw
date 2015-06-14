@@ -94,6 +94,7 @@ public class OrderController {
 	}
 	
 	public String getOrderInfo(){
+		this.id = this.orderFacade.getOrderFromIdInRequestMap().getId();
 		this.orderLines = orderLineFacade.getOrderLinesByOrderId(id);
 		return "orderInfo";
 	}
@@ -119,6 +120,7 @@ public class OrderController {
 		return "unprocessedOrders";
 	}
 	public String listOrderLines(){
+		this.id = this.orderFacade.getOrderFromIdInRequestMap().getId();
 		this.orderLines = this.orderLineFacade.getOrderLinesByOrderId(id);
 		return "newOrder";
 	}
