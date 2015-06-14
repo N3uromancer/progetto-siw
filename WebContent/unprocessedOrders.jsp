@@ -22,7 +22,7 @@
 			<td>${order.id}</td>
 			<td>
 				<h:commandLink action="#{orderController.processOrder}" value="Process">
-					<f:param name="id" value="#{order.id}" />
+					<f:param name="orderId" value="#{order.id}" />
 				</h:commandLink>			
 			</td>
 		</tr>

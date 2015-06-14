@@ -93,10 +93,15 @@ public class OrderController {
 		return "orders";
 	}
 	
-	public String processOrder(long id){
+	public String processOrder(){
+		String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("orderId");
+		long id = Long.valueOf(stringId).longValue();
 		this.order = this.orderFacade.getOrder(id);
 		boolean isProcessed = this.orderFacade.processOrder(this.order);
-		if(isProcessed) return "orderProcessed";
+		if(isProcessed) {
+			orderFacade.updateOrder(this.order);
+			return "orderProcessed";
+		}
 		else return "orderNotProcessed";
 	}
 	
