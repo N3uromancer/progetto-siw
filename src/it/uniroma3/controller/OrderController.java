@@ -88,6 +88,11 @@ public class OrderController {
 		return "orders"; 
 	}
 	
+	public String deleteOrder(){
+		orderFacade.deleteOrder(this.order);
+		return "orders";
+	}
+	
 	public String processOrder(long id){
 		this.order = this.orderFacade.getOrder(id);
 		boolean isProcessed = this.orderFacade.processOrder(this.order);
