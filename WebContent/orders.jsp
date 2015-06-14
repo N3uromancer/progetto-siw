@@ -15,7 +15,7 @@
 <h:form>
 <table border="solid">
 	<tr>
-		<th>ID</th><th>Customer</th><th>Address</th><th>Order state</th>
+		<th>ID</th><th>Customer</th><th>Address</th><th>Order state</th><th>Remove</th>
 	</tr>
 	<c:forEach var="order" items="#{orderController.orders}">
 		<tr>
@@ -26,6 +26,11 @@
 			</td>
 			<td>
 			${order.state}
+			</td>
+			<td>
+				<h:commandLink action="#{orderController.deleteOrder}" value="X">
+					<f:param name="orderId" value="#{order.id}" />
+				</h:commandLink>				
 			</td>
 		</tr>
 	</c:forEach>

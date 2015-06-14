@@ -48,8 +48,11 @@ public class OrderFacade {
 		return address;
 	}
 	
-    public void deleteOrder(Order order) {
-        em.remove(order);
+    public void deleteOrder(long id) {
+        //em.remove(order);
+    	Query q = em.createQuery("DELETE FROM Order o WHERE o.id = :id");
+    	q.setParameter("id", id).executeUpdate();
+    	
     }
     
 	public List<Order> getAllOrders() {
