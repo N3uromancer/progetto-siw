@@ -21,11 +21,12 @@
 		<tr>
 			<td>${order.id}</td>
 			<td>${order.state}</td>
-			<!--  <td>
-				<h:commandLink action="#{orderController.getOrderInfo}" value="#{product.name}">
-					<f:param name="id" value="#{product.id}" />
+			<td>
+				<h:commandLink action="#{orderController.getOrderInfo}" value="info" >
+					<f:param name="id" value="#{order.id}" />
 				</h:commandLink>
-			</td>-->
+				
+			</td>
 		</tr>
 	</c:forEach>
 </table>

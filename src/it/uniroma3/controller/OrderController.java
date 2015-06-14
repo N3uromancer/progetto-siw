@@ -93,6 +93,11 @@ public class OrderController {
 		return "customerOrders";
 	}
 	
+	public String getOrderInfo(){
+		this.orderLines = orderLineFacade.getOrderLinesByOrderId(id);
+		return "orderInfo";
+	}
+	
 	public String deleteOrder(){
 		this.order = this.orderFacade.getOrderFromIdInRequestMap();
 		orderFacade.deleteOrder(this.order.getId());
