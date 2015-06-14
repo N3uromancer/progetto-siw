@@ -19,7 +19,7 @@
 				</tr>
 				<c:forEach var="orderLine" items="#{orderController.orderLines}">
 					<tr>
-						<td>${orderLine.prouct.name}</td>
+						<td>${orderLine.product.name}</td>
 						<td>${orderLine.quantity}</td>
 						<td>${orderLine.unitPrice}</td>
 					</tr>
