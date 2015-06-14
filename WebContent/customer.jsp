@@ -5,8 +5,10 @@
 <html>
 <head>
 	<title>Customer</title>
+	<jsp:include page="import.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<f:view>
 	<ul>
 		<li>Id : ${customerController.customer.id}</li>
