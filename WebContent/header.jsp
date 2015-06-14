@@ -55,4 +55,26 @@
 				</div>
 			</div>
 		</div><!--/header-middle-->
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.html" class="active">Home</a></li>
+								<li>
+									<f:view>
+										<h:form>
+											<h:commandLink action="#{productController.listProducts}"
+												value="Products" />
+										</h:form>
+									</f:view>
+								</li>
+								<li><a href="contact.jsp">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
 	</header>
