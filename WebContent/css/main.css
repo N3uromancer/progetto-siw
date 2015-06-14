@@ -1427,9 +1427,11 @@ h2.title {
 
 #form {
   display: block;
-  margin-bottom: 185px;
-  margin-top: 185px;
+  margin-left:auto;
+  margin-right:auto;
+  width:50%;
   overflow: hidden;
+  text-align:center;
 }
 
 .login-form {
@@ -1490,7 +1492,8 @@ h2.title {
 }
 
 .login-form label{
-
+	font-color:#f0f0f0;
+	font-size:16px;
 }
 
 
