@@ -21,9 +21,9 @@ import javax.persistence.Query;
 	    }
 	    
 	    public List<OrderLine> getOrderLinesByOrderId(Long id){
-			Query q = em.createQuery("SELECT o FROM OrderLine o WHERE o.orders_id = :id");
+			Query q = em.createQuery("SELECT o FROM OrderLine o WHERE o.id = :id");
 			q.setParameter("id", id);
-			List<OrderLine> orderLines = (ArrayList<OrderLine>) q.getResultList();
+			List<OrderLine> orderLines = (List<OrderLine>) q.getResultList();
 			return orderLines;
 	    }
 		public EntityManager getEm() {
