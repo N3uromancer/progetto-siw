@@ -40,7 +40,7 @@ public class CustomerController {
 	}
 
 	public String findCustomer() {
-		this.customer = customerFacade.getCustomer(id);
+		this.customer = customerFacade.getCustomerFromIdInRequestMap();
 		return "customer";
 	}
 	
