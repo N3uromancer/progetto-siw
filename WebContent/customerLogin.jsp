@@ -5,28 +5,42 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-	<title>Customer Login</title>
+	<title>Customer Login - Progetto SIW</title>
 	<jsp:include page="import.jsp" />
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-<h1>Customer Login</h1>
-<f:view>
-<h:form>
-    <div>Email: <h:inputText value="#{customerController.email}" 
-                     required="true"
-                     requiredMessage="Email is mandatory"
-                     id="email"/> <h:message for="email" />
+	<div class="row">    		
+  		<div class="col-sm-12">    			   			
+			<h2 class="title text-center"><strong>Customer</strong> login</h2>    			    				    							
+		</div>			 		
 	</div>
-    <div>Password: <h:inputSecret value="#{customerController.password}" 
-                     required="true"
-                     requiredMessage="Password is mandatory"
-                     id="password"/> <h:message for="password" />
-	</div>
-	<div>
-		<h:commandButton value="Submit"  action="#{customerController.login}"/>
-	</div>
-</h:form>
-</f:view>
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="login-form"><!--login form-->
+						<f:view>
+							<h:form>
+								<div>Email: <h:inputText value="#{customerController.email}" 
+                     							required="true"
+                     							requiredMessage="Email is mandatory"
+                     							id="email"/> <h:message for="email" />
+                     			</div>
+							    <div>Password: <h:inputSecret value="#{customerController.password}" 
+                    				 				required="true"
+                    				 				requiredMessage="Password is mandatory"
+                     								id="password"/> <h:message for="password" />
+								</div>
+								<div>
+									<h:commandButton styleClass="btn btn-default" value="Login"  action="#{customerController.login}"/>
+								</div>
+							</h:form>
+						</f:view>
+					</div><!--/login form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
 </body>
 </html>
