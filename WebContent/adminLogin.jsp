@@ -5,28 +5,42 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-	<title>Admin Login</title>
+	<title>Admin Login - Progetto SIW</title>
 	<jsp:include page="import.jsp" />
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-<h1>Admin Login</h1>
-<f:view>
-<h:form>
-    <div>Name: <h:inputText value="#{adminController.name}" 
-                     required="true"
-                     requiredMessage="Name is mandatory"
-                     id="name"/> <h:message for="name" />
+	<div class="row">    		
+  		<div class="col-sm-12">    			   			
+			<h2 class="title text-center"><strong>Admin</strong> login</h2>    			    				    							
+		</div>			 		
 	</div>
-    <div>Password: <h:inputSecret value="#{adminController.password}" 
-                     required="true"
-                     requiredMessage="Password is mandatory"
-                     id="password"/> <h:message for="password" />
-	</div>
-	<div>
-		<h:commandButton value="Submit"  action="#{adminController.login}"/>
-	</div>
-</h:form>
-</f:view>
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="login-form"><!--login form-->
+						<f:view>
+							<h:form>
+								<div>Name: <h:inputText value="#{adminController.name}" 
+                     							required="true"
+                     							requiredMessage="Name is mandatory"
+                     							id="name"/> <h:message for="name" />
+                     			</div>
+							    <div>Password: <h:inputSecret value="#{adminController.password}" 
+                    				 				required="true"
+                    				 				requiredMessage="Password is mandatory"
+                     								id="password"/> <h:message for="password" />
+								</div>
+								<div>
+									<h:commandButton styleClass="btn btn-default" value="Login"  action="#{adminController.login}"/>
+								</div>
+							</h:form>
+						</f:view>
+					</div><!--/login form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
 </body>
 </html>
