@@ -90,8 +90,8 @@ public class OrderController {
 	
 	public String deleteOrder(){
 		this.order = this.orderFacade.getOrderFromIdInRequestMap();
-		orderFacade.deleteOrder(this.order);
-		return "orders";
+		orderFacade.deleteOrder(this.order.getId());
+		return "adminWelcomePage";
 	}
 	
 	public String processOrder(){
