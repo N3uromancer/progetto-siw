@@ -3,6 +3,7 @@ package it.uniroma3.model;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 
 import java.util.Calendar;
 import java.util.List;
@@ -31,6 +32,13 @@ public class OrderFacade {
     
 	public void updateOrder(Order order) {
         em.merge(order);
+	}
+	
+	public Order getOrderFromIdInRequestMap(){
+		String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("orderId");
+		long id = Long.valueOf(stringId).longValue();
+		Order order = this.getOrder(id);
+		return order;
 	}
 	
 	public Address findAddressByOrderId(Long id){
