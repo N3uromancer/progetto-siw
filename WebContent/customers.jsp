@@ -21,7 +21,7 @@
 			<td>${customer.lastName}</td>
 			<td>
 				<h:commandLink action="#{customerController.findCustomer}" value="+">
-					<f:param name="id" value="#{customer.id}" />
+					<f:param name="customerId" value="#{customer.id}" />
 				</h:commandLink>
 			</td>
 		</tr>
