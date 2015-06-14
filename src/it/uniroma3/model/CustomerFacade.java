@@ -1,10 +1,12 @@
 package it.uniroma3.model;
 
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+
 import java.util.List;
 
 	@Stateless
@@ -38,7 +40,14 @@ import java.util.List;
 	        List<Customer> customers = em.createQuery(cq).getResultList();
 			return customers;
 		}
-
+		
+		public Customer getCustomerFromIdInRequestMap(){
+			String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("customerId");
+			long id = Long.valueOf(stringId).longValue();
+			Customer customer = this.getCustomer(id);
+			return customer;
+		}
+		
 		public Customer getCustomer(Long id){
 			/*Query q = em.createQuery("SELECT c FROM Customer c WHERE c.id = :id");
 			q.setParameter("id", id);
