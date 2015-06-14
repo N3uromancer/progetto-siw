@@ -88,6 +88,11 @@ public class OrderController {
 		return "orders"; 
 	}
 	
+	public String listCustomerOrders(){
+		this.orders =orderFacade.getAllOrdersByCustomer(currentCustomer);
+		return "customerOrders";
+	}
+	
 	public String deleteOrder(){
 		this.order = this.orderFacade.getOrderFromIdInRequestMap();
 		orderFacade.deleteOrder(this.order.getId());
