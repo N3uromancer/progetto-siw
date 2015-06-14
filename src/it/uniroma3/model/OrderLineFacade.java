@@ -21,7 +21,7 @@ import javax.persistence.Query;
 	    }
 	    
 	    public List<OrderLine> getOrderLinesByOrderId(Long id){
-			Query q = em.createQuery("SELECT o FROM orderline o WHERE o.orders_id = :id");
+			Query q = em.createQuery("SELECT o FROM OrderLine o WHERE o.orders_id = :id");
 			q.setParameter("id", id);
 			List<OrderLine> orderLines = (ArrayList<OrderLine>) q.getResultList();
 			return orderLines;
