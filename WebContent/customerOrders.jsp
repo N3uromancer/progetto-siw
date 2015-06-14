@@ -23,7 +23,7 @@
 			<td>${order.state}</td>
 			<td>
 				<h:commandLink action="#{orderController.getOrderInfo}" value="info" >
-					<f:param name="id" value="#{order.id}" />
+					<f:param name="orderId" value="#{order.id}" />
 				</h:commandLink>
 				
 			</td>
