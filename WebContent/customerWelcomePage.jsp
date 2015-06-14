@@ -25,6 +25,9 @@
 			</h:form>
 		</c:if>
 		<h:form>
+				<h:commandLink action = "#{orderController.listCustomerOrders}" value = "List all your orders"></h:commandLink>
+		</h:form>
+		<h:form>
 			<h:commandLink action="#{customerController.logout}"
 						value="Logout" />
 		</h:form>
