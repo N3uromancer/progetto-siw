@@ -41,6 +41,13 @@ public class OrderFacade {
 		return order;
 	}
 	
+	public Address findAddressByOrderId(Long id){
+		Query q = em.createQuery("SELECT o.customer.address FROM Order o WHERE o.id = :id");
+		q.setParameter("id", id);
+		Address address = (Address)q.getSingleResult();
+		return address;
+	}
+	
 	public List<OrderLine> getOrderLines(Order order){
 		List<OrderLine> orderLines = order.getOrderLines();
 		return orderLines;
