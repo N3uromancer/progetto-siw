@@ -30,11 +30,12 @@ import java.util.*;
 	public Product() {
     }
 
-	public Product(String name, Float price, String description, String code) {
+	public Product(String name, Float price, String description, String code, int quantity) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.code = code;
+        this.quantity = quantity;
 }
 
     //          Getters & Setters        
