@@ -88,7 +88,7 @@ public class OrderController {
 			this.currentOrder.addOrderLine(orderLine);
 			this.orderFacade.updateOrder(this.currentOrder);
 		}
-		return "productAdded";
+		return "newOrder";
 	}
 	
 	public String listOrders() {
