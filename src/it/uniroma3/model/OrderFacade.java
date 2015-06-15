@@ -84,12 +84,13 @@ public class OrderFacade {
 			if(product.getQuantity()<ol.getQuantity()){
 				isProcessed = false;
 			} 
-			else{
+		}
+		if(isProcessed){
+			for(OrderLine ol : order.getOrderLines()){
+				Product product = ol.getProduct();
 				product.setQuantity(product.getQuantity()-ol.getQuantity());
 				em.merge(product);
 			}
-		}
-		if(isProcessed){
 			order.setProcessingDate(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
 			order.setState("processed");
 		}
