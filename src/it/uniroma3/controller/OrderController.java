@@ -94,8 +94,8 @@ public class OrderController {
 	}
 	
 	public String getOrderInfo(){
-		this.id = this.orderFacade.getOrderFromIdInRequestMap().getId();
-		this.orderLines = orderLineFacade.getOrderLinesByOrderId(id);
+		this.order = this.orderFacade.getOrderFromIdInRequestMap();
+		this.orderLines = orderFacade.getOrderLines(this.order);
 		return "orderInfo";
 	}
 	
