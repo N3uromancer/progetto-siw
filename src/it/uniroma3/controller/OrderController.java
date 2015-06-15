@@ -77,9 +77,16 @@ public class OrderController {
 			this.product = this.productFacade.getProductByCode(productCode);
 		//se non esiste un prodotto con quel codice ritorna sulla stessa view
 		} catch(Exception e) {return "productToOrder";}
-		this.orderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
-		this.currentOrder.addOrderLine(orderLine);
-		this.orderFacade.updateOrder(this.currentOrder);
+		this.orderLine = this.orderFacade.getOrderLineByProduct(this.currentOrder, this.product);
+		if(this.orderLine != null){
+			this.orderLine = this.orderLineFacade.setQuantity(this.orderLine, orderLine.getQuantity() + quantity);
+			orderLineFacade.updateOrderLine(this.orderLine);
+		}
+		else{
+			this.orderLine = this.orderLineFacade.createOrderLine(product.getPrice(), quantity, product);
+			this.currentOrder.addOrderLine(orderLine);
+			this.orderFacade.updateOrder(this.currentOrder);
+		}
 		return "productAdded";
 	}
 	
