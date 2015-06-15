@@ -29,8 +29,8 @@
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Igor Proshchenko</h2>
 	    				<address>
-							<p><label>Mat:</label> </p>
-							<p><label>Email:</label> </p>
+							<p><label>Mat:</label> 450714</p>
+							<p><label>Email:</label>igor_92007@bk.ru </p>
 	    				</address>
 	    			</div>
     			</div>   			
