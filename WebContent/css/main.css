@@ -473,7 +473,9 @@ ul.sub-menu {
   border-top: 1px solid #FFFFFF;
   padding-top: 15px;
 }
-
+.single-widget{
+	text-align:center;
+}
 .single-widget h2 {
   color: #666663;
   font-family: 'Roboto', sans-serif;
@@ -581,7 +583,7 @@ ul.sub-menu {
 }
 
 .item {
-  text-align:center;
+	text-align:center;
 }
 
 
@@ -599,7 +601,6 @@ ul.sub-menu {
   color: #B4B1AB;
   font-family: abel;
   font-size: 48px;
-  margin-top: 30px;
 }
 
 .item h1 span {
@@ -1427,8 +1428,8 @@ h2.title {
 
 #form {
   display: block;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left:28.5%;
+  margin-right:28.5%;
   width:50%;
   overflow: hidden;
   text-align:center;
