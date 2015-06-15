@@ -52,10 +52,11 @@ public class CustomerController {
 	public String login(){
 		String nextPage = "";
 		try{
-		    this.customer = customerFacade.getCustomerByEmail(this.email);
+		    Customer customer = customerFacade.getCustomerByEmail(this.email);
 			if(customer.verifyPassword(this.password)){
 				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loggedAdmin");
 				nextPage = "customerWelcomePage";
+				this.customer = customer;
 			} else nextPage = "customerLogin";
 		} 	
 		catch(Exception e){
