@@ -83,6 +83,10 @@ public class OrderFacade {
 			Product product = ol.getProduct();
 			if(product.getQuantity()<ol.getQuantity()){
 				isProcessed = false;
+			} 
+			else{
+				product.setQuantity(product.getQuantity()-ol.getQuantity());
+				em.merge(product);
 			}
 		}
 		if(isProcessed){
