@@ -1,6 +1,5 @@
 package it.uniroma3.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -26,6 +25,16 @@ import javax.persistence.Query;
 			List<OrderLine> orderLines = (List<OrderLine>) q.getResultList();
 			return orderLines;
 	    }
+	    
+		public void updateOrderLine(OrderLine orderLine) {
+	        em.merge(orderLine);
+		}
+		
+		public OrderLine setQuantity(OrderLine orderLine, int quantity){
+			orderLine.setQuantity(quantity);
+			return orderLine;
+		}
+		
 		public EntityManager getEm() {
 			return em;
 		}
@@ -33,5 +42,4 @@ import javax.persistence.Query;
 		public void setEm(EntityManager em) {
 			this.em = em;
 		}
-		
 }
