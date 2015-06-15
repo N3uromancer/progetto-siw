@@ -54,6 +54,7 @@ public class CustomerController {
 		try{
 		    this.customer = customerFacade.getCustomerByEmail(this.email);
 			if(customer.verifyPassword(this.password)){
+				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loggedAdmin");
 				nextPage = "customerWelcomePage";
 			} else nextPage = "customerLogin";
 		} 	

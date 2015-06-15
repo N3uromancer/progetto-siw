@@ -27,7 +27,8 @@ public class AdminController {
 		try{
 			Admin admin = adminFacade.getAdminByName(this.name);
 			if(admin.verifyPassword(this.password)){
-				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("loggedAdmin", admin);
+				//FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("loggedAdmin", admin);
+				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("customer");
 				nextPage = "adminWelcomePage";
 				this.setLoggedAdmin(admin);
 			} else nextPage = "adminLogin";
@@ -69,7 +70,7 @@ public class AdminController {
 	}
 	
 	public Admin getLoggedAdmin(){
-		this.loggedAdmin = (Admin) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loggedAdmin");
+		//this.loggedAdmin = (Admin) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loggedAdmin");
 		return loggedAdmin;
 	}
 	public void setLoggedAdmin(Admin admin){
