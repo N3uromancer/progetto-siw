@@ -13,7 +13,7 @@
 	<f:view>
 		<h1>Order has been created</h1>
 	    <h:form>
-	    	<h:commandLink action = "#{productController.listProductsForCustomer}" value = "products list"/>
+	    	<h:commandLink action = "#{productController.listProducts}" value = "Products list"/>
 	    </h:form>	
 	</f:view>
 </body>
