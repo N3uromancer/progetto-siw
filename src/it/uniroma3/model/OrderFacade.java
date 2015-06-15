@@ -48,6 +48,16 @@ public class OrderFacade {
 		return address;
 	}
 	
+	public OrderLine getOrderLineByProduct(Order order, Product product){
+		OrderLine orderLine = null;
+		for(OrderLine ol : order.getOrderLines()){
+			if(ol.getProduct().equals(product)){
+				orderLine = ol;
+			}
+		}
+		return orderLine;
+	}
+	
 	public List<OrderLine> getOrderLines(Order order){
 		List<OrderLine> orderLines = order.getOrderLines();
 		return orderLines;
