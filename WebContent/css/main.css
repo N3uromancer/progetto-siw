@@ -2427,7 +2427,15 @@ h2.title {
 .contact-map {
   width: 100%;
   height: 385px;
-  margin-bottom: 70px
+  margin-bottom: 70px;
+}
+
+.contact-form{
+	margin-right:auto;
+	margin-left:auto;
+	width:80%;
+	padding-left:2px;
+	padding-right:2px;
 }
 
 .contact-info .heading, 
@@ -2437,6 +2445,7 @@ h2.title {
 
 .contact-form .form-group {
   margin-bottom: 20px;
+  text-align:center;
 }
 
 #contact-page 
