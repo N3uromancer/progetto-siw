@@ -59,7 +59,7 @@
 					<div class="col-sm-12">
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.jsp" class="active">Home</a></li>
 								<li>
 									<f:view>
 										<h:form>
