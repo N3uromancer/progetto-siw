@@ -11,25 +11,41 @@
 <body>
 	<jsp:include page="header.jsp" />
 <f:view>
-<h1>Products</h1>
-<h:form>
-<table>
-	<tr>
-		<th>Name</th><th>Price</th>
-	</tr>
-	<c:forEach var="product" items="#{productController.products}">
-		<tr>
-			<td>
-				<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
-					<f:param name="id" value="#{product.id}" />
-				</h:commandLink>
-			</td>
-			<td>${product.price}</td>
-		</tr>
-	</c:forEach>
-</table>
-</h:form>
-<a href='<c:url value="/faces/index.jsp" />'>Back</a>
-</f:view>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Products</span> list</h1>
+		</div>
+	</div> 
+	<h:form>
+			<div class="row">
+				<div class="col-sm-12 padding-right">
+					<div class="features_items"><!--features_items-->
+						<c:forEach var="product" items="#{productController.products}">
+							<div class="col-sm-4">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+										<div class="productinfo text-center">
+											<h2>${product.price}&euro;</h2>
+											<p>${product.name}</p>
+											<a href="#" class="btn btn-default add-to-cart">Details</a>
+										</div>
+										<div class="product-overlay">
+											<div class="overlay-content">
+												<h2>${product.price}&euro;</h2>
+												<p>${product.name}</p>
+													<h:commandLink styleClass="btn btn-default add-to-cart" action="#{productController.findProduct}" value="Details">
+														<f:param name="id" value="#{product.id}" />
+													</h:commandLink>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</f:view>
 </body>
 </html>
