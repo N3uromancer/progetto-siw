@@ -12,6 +12,11 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Customer</span> Area</h1>
+		</div>
+	</div> 
 	<f:view>
 		Welcome: ${customerController.customer.firstName}<br />
 		<c:if test="${orderController.currentOrder==null}">

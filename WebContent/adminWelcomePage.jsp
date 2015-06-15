@@ -12,8 +12,12 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Admin</span> Area</h1>
+		</div>
+	</div> 
 	<f:view>
-		<h1>Area Admin</h1>
 		<ul>
 			<li>
 				<a href='<c:url value="/faces/newProduct.jsp" />'>Insert a new product</a>

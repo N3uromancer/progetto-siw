@@ -10,11 +10,11 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div class="row">    		
-  		<div class="col-sm-12">    			   			
-			<h2 class="title text-center"><strong>Customer</strong> login</h2>    			    				    							
-		</div>			 		
-	</div>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Customer</span> Login</h1>
+		</div>
+	</div> 
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
