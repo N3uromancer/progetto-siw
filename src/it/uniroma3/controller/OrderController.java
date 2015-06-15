@@ -74,6 +74,7 @@ public class OrderController {
 	
 	public String addOrderLine(){
 		try{
+			this.productCode = (String)FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("productCode");
 			this.product = this.productFacade.getProductByCode(productCode);
 		//se non esiste un prodotto con quel codice ritorna sulla stessa view
 		} catch(Exception e) {return "productToOrder";}
