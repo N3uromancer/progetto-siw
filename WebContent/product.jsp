@@ -24,11 +24,20 @@
 				<c:if test="${customerController.customer!=null}">
 				<c:if test="${orderController.currentOrder!=null}">
 					<label>Quantity:</label>
-					<input type="text" value="3" />
-					<button type="button" class="btn btn-fefault cart">
-						<i class="fa fa-shopping-cart"></i>
-						Add to cart
-					</button>
+					<h:form>
+						<h:inputText value="#{orderController.quantity}" 
+                    		 required="true"
+                    		 requiredMessage="quantity is mandatory"
+                  	 			id="quantity"/> <h:message for="quantity" />
+            			<div class="btn btn-default add-to-cart">
+            				<p>
+            					<i class="fa fa-shopping-cart"></i>
+            				 	<h:commandButton value="Add" action="#{orderController.addOrderLine}">
+            						<f:param name="productCode" value="#{productController.product.code}" />
+            					</h:commandButton>
+            				</p>
+            			</div>
+            		</h:form>
 				</c:if>
 				</c:if>
 				<p><b>Description:</b></p>
