@@ -10,36 +10,56 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+	<div class="item">
+		<div class="col-sm-12">
+			<h1>New<span> Product</span></h1>
+		</div>
+	</div>
 <f:view>
-<h:form>
-    <div>Name: <h:inputText value="#{productController.name}" 
+<div class="row">  	
+	<div class="col-sm-12">
+		<div class="contact-form">
+<h:form styleClass="contact-form row">
+    <div class="form-group col-md-6">
+    	Name: <h:inputText value="#{productController.name}" 
+    				styleClass="form-control"
                      required="true"
                      requiredMessage="Name is mandatory"
                      id="name"/> <h:message for="name" />
 	</div>
-    <div>Code: <h:inputText value="#{productController.code}" 
+    <div class="form-group col-md-6">
+    	Code: <h:inputText styleClass="form-control" value="#{productController.code}" 
                      required="true"
                      requiredMessage="Code is mandatory"
                      id="code"/> <h:message for="code" />
 	</div>
-    <div>Price: <h:inputText value="#{productController.price}" 
+    <div class="form-group col-md-6">
+    	Price: <h:inputText styleClass="form-control" value="#{productController.price}" 
                      required="true"
                      requiredMessage="Price is mandatory"
                      converterMessage="Price must be a number"
                      id="price"/> <h:message for="price" />
 	</div>
-    <div>Description: <h:inputTextarea value="#{productController.description}" 
+    <div class="form-group col-md-6">
+    	Quantity: <h:inputText styleClass="form-control" value="#{productController.quantity}" 
+                     required="true"
+                     requiredMessage="Quantity is mandatory"
+                     converterMessage="Quantity must be a number"
+                     id="quantity"/> <h:message for="quantity" />
+	</div>
+    <div  class="form-group col-md-12">
+    	Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}" 
     				required="false" 
     				cols="20" 
     				rows="5" /> 
                      
 	</div>
-	<div>
-		<h:commandButton value="Submit"  action="#{productController.createProduct}"/>
+	<div class="form-group col-md-12">
+		<h:commandButton styleClass="btn btn-primary"  value="Create"  action="#{productController.createProduct}"/>
 	</div>
-	<h:commandLink action="#{productController.listProducts}"
-						value="List all Products" />
 </h:form>
+</div>
+</div>
+</div>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
