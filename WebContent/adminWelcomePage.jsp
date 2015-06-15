@@ -12,13 +12,25 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+	<f:view>
 	<div class="item">
 		<div class="col-sm-12">
 			<h1><span>Admin</span> Area</h1>
 		</div>
 	</div> 
-	<f:view>
-		<ul>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="single-widget">
+				<h2>Admin info</h2>
+				<ul class="nav nav-pills nav-stacked">
+					<li><label>Name:</label> ${adminController.loggedAdmin.name}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-6">
+		<div class="single-widget">
+		<h2>You can:</h2>
+		<ul class="nav nav-pills nav-stacked">
 			<li>
 				<a href='<c:url value="/faces/newProduct.jsp" />'>Insert a new product</a>
 			</li>
@@ -29,7 +41,8 @@
 				</h:form>
 			</li>
 			<li>
-				<a href='<c:url value="/faces/newCustomer.jsp" />'>Insert a new customer</a></li>
+				<a href='<c:url value="/faces/newCustomer.jsp" />'>Insert a new customer</a>
+			</li>
 			<li>
 				<h:form>
 					<h:commandLink action="#{customerController.listCustomers}"
@@ -55,6 +68,8 @@
 				</h:form>
 			</li>
 		</ul>
+		</div>
+		</div>
+	</div>
 	</f:view>
-</body>
-</html>
+	<jsp:include page="footer.jsp" />

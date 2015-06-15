@@ -12,31 +12,66 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+	<f:view>
 	<div class="item">
 		<div class="col-sm-12">
 			<h1><span>Customer</span> Area</h1>
 		</div>
 	</div> 
-	<f:view>
-		Welcome: ${customerController.customer.firstName}<br />
-		<c:if test="${orderController.currentOrder==null}">
-			<h:form>
-				<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
-			</h:form>
-		</c:if>
-		<c:if test="${orderController.currentOrder!=null}">
-			<h:form>
-				<h:commandLink action = "#{productController.listProductsForCustomer}" value = "Add product to your current order"></h:commandLink>
-			</h:form>
-		</c:if>
-		<h:form>
-				<h:commandLink action = "#{orderController.listCustomerOrders}" value = "List all your orders"></h:commandLink>
-		</h:form>
-		<h:form>
-			<h:commandLink action="#{customerController.logout}"
-						value="Logout" />
-		</h:form>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="single-widget">
+				<h2>Customer info</h2>
+				<ul class="nav nav-pills nav-stacked">
+					<li><label>First name:</label> ${customerController.customer.firstName}</li>
+					<li><label>Last name:</label> ${customerController.customer.lastName}</li>
+					<li><label>Email:</label> ${customerController.customer.email}</li>
+					<li><label>Phone number:</label> ${customerController.customer.phoneNumber}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="single-widget">
+				<h2>Customer Address</h2>
+				<ul class="nav nav-pills nav-stacked">
+					<li><label>City:</label> ${customerController.customer.address.city}</li>
+					<li><label>Street:</label> ${customerController.customer.address.street}</li>
+					<li><label>City:</label> ${customerController.customer.address.country}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="single-widget">
+				<h2>You can:</h2>
+				<ul class="nav nav-pills nav-stacked">
+					<c:if test="${orderController.currentOrder==null}">
+						<li>
+							<h:form>
+								<h:commandLink action = "#{orderController.createOrderSimple}" value = "Create a new order"></h:commandLink>
+							</h:form>
+						</li>
+					</c:if>
+					<c:if test="${orderController.currentOrder!=null}">
+						<li>
+							<h:form>
+								<h:commandLink action = "#{productController.listProductsForCustomer}" value = "Add product to your current order"></h:commandLink>
+							</h:form>
+						</li>
+					</c:if>
+					<li>
+						<h:form>
+							<h:commandLink action = "#{orderController.listCustomerOrders}" value = "List all your orders"></h:commandLink>
+						</h:form>
+					</li>
+					<li>
+						<h:form>
+							<h:commandLink action="#{customerController.logout}"
+								value="Logout" />
+						</h:form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	</f:view>
-</body>
-</html>
-
+	<jsp:include page="footer.jsp" />
