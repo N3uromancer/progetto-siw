@@ -10,32 +10,52 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-<h1>Orders</h1>
-<f:view>
-<h:form>
-<table border="solid">
-	<tr>
-		<th>ID</th><th>Customer</th><th>Address</th><th>Order state</th><th>Remove</th>
-	</tr>
-	<c:forEach var="order" items="#{orderController.orders}">
-		<tr>
-			<td>${order.id}</td>
-			<td>${order.customer.firstName} ${order.customer.lastName}</td>
-			<td>
-				${order.customer.address.street}, ${order.customer.address.city} - ${order.customer.address.country} (${order.customer.address.zipCode}) 
-			</td>
-			<td>
-			${order.state}
-			</td>
-			<td>
-				<h:commandLink action="#{orderController.deleteOrder}" value="X">
-					<f:param name="orderId" value="#{order.id}" />
-				</h:commandLink>				
-			</td>
-		</tr>
-	</c:forEach>
-</table>
-</h:form>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Orders</span> List</h1>
+		</div>
+	</div> 
+	<f:view>
+		<h:form>
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="left-sidebar">
+								<div class="panel-group category-products" id="accordian">
+									<c:forEach var="order" items="#{orderController.orders}">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<h:commandLink style="color:red" action="#{orderController.deleteOrder}" value="x">
+														<f:param name="orderId" value="#{order.id}" />
+													</h:commandLink>
+													<a data-toggle="collapse" data-parent="#accordian" href="#${order.id}">
+														<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+														Order ID: ${order.id} | Order state: ${order.state}
+													</a>
+												</h4>
+											</div>
+											<div id="${order.id}" class="panel-collapse collapse">
+												<div class="panel-body">
+													<ul>
+														<li>Customer: ${order.customer.firstName} ${order.customer.lastName}</li>
+														<li>City: ${order.customer.address.city}</li>
+														<li>Street: ${order.customer.address.street}</li>
+														<li>Country: ${order.customer.address.country}</li>
+														<li>State: ${order.customer.address.state}</li>
+														<li>Zipcode: ${order.customer.address.zipCode}</li>
+													</ul>
+												</div>
+											</div>
+										</div>				
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>	
+	</h:form>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
