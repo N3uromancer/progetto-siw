@@ -36,7 +36,9 @@
 				<ul class="nav nav-pills nav-stacked">
 					<li><label>City:</label> ${customerController.customer.address.city}</li>
 					<li><label>Street:</label> ${customerController.customer.address.street}</li>
-					<li><label>City:</label> ${customerController.customer.address.country}</li>
+					<li><label>Country:</label> ${customerController.customer.address.country}</li>
+					<li><label>State:</label> ${customerController.customer.address.state}</li>
+					<li><label>Zip code:</label> ${customerController.customer.address.zipCode}</li>
 				</ul>
 			</div>
 		</div>
