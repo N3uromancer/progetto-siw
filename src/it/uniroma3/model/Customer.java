@@ -1,6 +1,7 @@
 package it.uniroma3.model;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
@@ -17,11 +18,18 @@ public class Customer {
 	@Column(nullable = false)
 	private  String lastName;
 	
+	@Column
 	private String password;
 	
+	@Column
 	private String email;
 	
+	@Column
 	private int phoneNumber;
+	
+	@Column
+	@Temporal (TemporalType.TIMESTAMP)
+	private Calendar registrationDate;
 	
 	@OneToMany(mappedBy = "customer")
 	private List<Order> orders;
@@ -33,6 +41,20 @@ public class Customer {
 	public Customer(){
 		this.orders = new LinkedList<Order>();
 	}
+
+	public Customer(String firstname, String lastname, String email, String password, int phoneNumber,
+					String street, String city, String state, String zipCode, String country)
+	{	
+		this.address = new Address(street, city, state, zipCode, country);
+		this.firstName = firstname;
+		this.lastName = lastname;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.password = password;
+		this.orders = new LinkedList<Order>();
+		this.registrationDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
+		
+	}	
 	
 	public Customer(String firstname, String lastname, String email, String password, int phoneNumber){
 		this.firstName = firstname;
@@ -41,12 +63,15 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 		this.password = password;
 		this.orders = new LinkedList<Order>();
+		this.registrationDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
 		
 	}
 	
 	public Customer(String firstName, String lastName){
 		this.firstName=firstName;
 		this.lastName=lastName;
+		this.orders = new LinkedList<Order>();
+		this.registrationDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
 	}
 	
 	public Customer(String firstName, String lastName, String email, String password){
@@ -54,6 +79,8 @@ public class Customer {
 		this.lastName=lastName;
 		this.email = email;
 		this.password = password;
+		this.orders = new LinkedList<Order>();
+		this.registrationDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
 	}
 	
 	public String getPassword() {
