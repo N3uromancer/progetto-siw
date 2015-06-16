@@ -1,6 +1,7 @@
 package it.uniroma3.model;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
@@ -32,15 +33,25 @@ public class Order {
 	@Temporal (TemporalType.TIMESTAMP)
 	private Calendar processingDate;
 
+	@Column
+	@Temporal (TemporalType.TIMESTAMP)
+	private Calendar openingDate;
+
+	@Column
+	@Temporal (TemporalType.TIMESTAMP)
+	private Calendar closingDate;
+	
 	public Order(Customer customer){
 		this.customer = customer;
 		this.orderLines = new LinkedList<OrderLine>();
 		this.state = "open";
+		this.openingDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
 	}	
 	
 	public Order(){
 		this.orderLines = new LinkedList<OrderLine>();
 		this.state = "open";
+		this.openingDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
 	}	
 	
 	public Customer getCustomer(){
@@ -81,5 +92,21 @@ public class Order {
 
 	public void setProcessingDate(Calendar processingDate) {
 		this.processingDate = processingDate;
+	}
+
+	public Calendar getOpeningDate() {
+		return openingDate;
+	}
+
+	public void setOpeningDate(Calendar openingDate) {
+		this.openingDate = openingDate;
+	}
+
+	public Calendar getClosingDate() {
+		return closingDate;
+	}
+
+	public void setClosingDate(Calendar closingDate) {
+		this.closingDate = closingDate;
 	}
 }
