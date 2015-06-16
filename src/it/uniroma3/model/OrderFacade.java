@@ -70,6 +70,12 @@ public class OrderFacade {
     	
     }
     
+    public void completeOrder(Order order){
+		order.setState("close");
+		order.setClosingDate(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
+		this.updateOrder(order);
+    }
+    
 	public List<Order> getAllOrders() {
         CriteriaQuery<Order> cq = em.getCriteriaBuilder().createQuery(Order.class);
         cq.select(cq.from(Order.class));
