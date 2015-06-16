@@ -39,7 +39,11 @@
 											<div id="${order.id}" class="panel-collapse collapse">
 												<div class="panel-body">
 													<ul>
-														<li>Customer: ${order.customer.firstName} ${order.customer.lastName}</li>
+														<li><b>Customer Info</b></li>
+														<li>First name: ${order.customer.firstName}</li>
+														<li>Last name: ${order.customer.lastName}</li>
+														<li>Email: ${order.customer.email}</li>
+														<li>Phone: ${order.customer.phoneNumber}</li>
 														<li>City: ${order.customer.address.city}</li>
 														<li>Street: ${order.customer.address.street}</li>
 														<li>Country: ${order.customer.address.country}</li>
