@@ -20,6 +20,7 @@ public class CustomerController {
 	private String firstName;
 	private String lastName;
 	private Customer customer;
+	private Customer loggedCustomer;
 	private String password;
 	private String email;
 	private int phoneNumber;
@@ -30,7 +31,7 @@ public class CustomerController {
 	private CustomerFacade customerFacade;
 	
 	public String createCustomer() {
-		this.customer = customerFacade.createCustomer(firstName, lastName, email, password);
+		this.customer = customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, street, city, state, country, zipcode);
 		return "customer"; 
 	}
 	
@@ -52,11 +53,11 @@ public class CustomerController {
 	public String login(){
 		String nextPage = "";
 		try{
-		    Customer customer = customerFacade.getCustomerByEmail(this.email);
-			if(customer.verifyPassword(this.password)){
+		    this.customer = customerFacade.getCustomerByEmail(this.email);
+			if(this.customer.verifyPassword(this.password)){
 				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loggedAdmin");
 				nextPage = "customerWelcomePage";
-				this.customer = customer;
+				this.loggedCustomer = customer;
 			} else nextPage = "customerLogin";
 		} 	
 		catch(Exception e){
@@ -173,6 +174,16 @@ public class CustomerController {
 
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
-	}	
+	}
+
+	public Customer getLoggedCustomer() {
+		return loggedCustomer;
+	}
+
+	public void setLoggedCustomer(Customer loggedCustomer) {
+		this.loggedCustomer = loggedCustomer;
+	}
+	
+	
 		
 }

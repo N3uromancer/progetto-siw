@@ -42,10 +42,10 @@ public class Customer {
 		this.orders = new LinkedList<Order>();
 	}
 
-	public Customer(String firstname, String lastname, String email, String password, int phoneNumber,
-					String street, String city, String state, String zipCode, String country)
+	public Customer(String firstname, String lastname, String email, 
+					String password, int phoneNumber, Address address)
 	{	
-		this.address = new Address(street, city, state, zipCode, country);
+		this.address = address;
 		this.firstName = firstname;
 		this.lastName = lastname;
 		this.email = email;
