@@ -32,7 +32,7 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<c:if test="${customerController.customer != null}">
+								<c:if test="${customerController.loggedCustomer != null}">
 									<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
 									<li><a href="customerWelcomePage.jsp"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
@@ -43,7 +43,7 @@
 									<li><a href="#"><i class="fa fa-user"></i> Customer</a></li>
 									<li><a href="adminWelcomePage.jsp"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>							
 								</c:if>
-								<c:if test="${customerController.customer == null && adminController.loggedAdmin == null}">
+								<c:if test="${customerController.loggedCustomer == null && adminController.loggedAdmin == null}">
 									<li><a href='<c:url value="/faces/adminLogin.jsp" />'><i class="fa fa-lock"></i> Admin Login</a></li>								
 									<li><a href='<c:url value="/faces/customerLogin.jsp" />'><i class="fa fa-lock"></i> Customer Login</a></li>
 								</c:if>
