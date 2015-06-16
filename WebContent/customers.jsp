@@ -10,26 +10,58 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-<f:view>
-<h1>Customers</h1>
-<h:form>
-<table>
-	<tr>
-		<th>First name</th><th>Last name</th><th>Details</th>
-	</tr>
-	<c:forEach var="customer" items="#{customerController.customers}">
-		<tr>
-			<td>${customer.firstName}</td>
-			<td>${customer.lastName}</td>
-			<td>
-				<h:commandLink action="#{customerController.findCustomer}" value="+">
-					<f:param name="customerId" value="#{customer.id}" />
-				</h:commandLink>
-			</td>
-		</tr>
-	</c:forEach>
-</table>
-</h:form>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1><span>Customers</span> List</h1>
+		</div>
+	</div> 
+	<f:view>
+		<h:form>
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="left-sidebar">
+								<div class="panel-group category-products" id="accordian">
+									<c:forEach var="customer" items="#{customerController.customers}">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordian" href="#${customer.id}">
+														<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+														<b>ID:</b> ${customer.id} | <b>Name:</b> ${customer.firstName} ${customer.lastName}
+													</a>
+												</h4>
+											</div>
+											<div id="${customer.id}" class="panel-collapse collapse">
+												<div class="panel-body">
+													<ul>
+														<li><b>Customer Info</b></li>
+														<li>First name: ${customer.firstName}</li>
+														<li>Last name: ${customer.lastName}</li>
+														<li>Email: ${customer.email}</li>
+														<li>Phone: ${customer.phoneNumber}</li>
+														<li>City: ${customer.address.city}</li>
+														<li>Street: ${customer.address.street}</li>
+														<li>Country: ${customer.address.country}</li>
+														<li>State: ${customer.address.state}</li>
+														<li>Zipcode: ${customer.address.zipCode}</li>
+														<!--li>
+															<h:commandLink action="#{customerController.findCustomer}" value="">
+																	<f:param name="customerId" value="#{customer.id}" />
+															</h:commandLink>
+														</li-->													
+													</ul>
+												</div>
+											</div>
+										</div>				
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>	
+	</h:form>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
