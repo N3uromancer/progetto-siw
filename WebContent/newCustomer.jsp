@@ -9,35 +9,94 @@
 	<jsp:include page="import.jsp" />
 </head>
 <body>
-<f:view>
-<h:form>
 	<jsp:include page="header.jsp" />
-    <div>First name: <h:inputText value="#{customerController.firstName}" 
-                     required="true"
-                     requiredMessage="First name is mandatory"
-                     id="firstName"/> <h:message for="firstName" />
+	<div class="item">
+		<div class="col-sm-12">
+			<h1>New<span> Customer</span></h1>
+		</div>
 	</div>
-    <div>Last name: <h:inputText value="#{customerController.lastName}" 
-                     required="true"
-                     requiredMessage="Last name is mandatory"
-                     id="lastName"/> <h:message for="lastName" />
+<f:view>
+<div class="row">  	
+	<div class="col-sm-12">
+		<div class="contact-form">
+			<h:form styleClass="contact-form row">
+    			<div class="form-group col-md-6">
+    				First name: <h:inputText value="#{customerController.firstName}" 
+    								styleClass="form-control"
+                				    required="true"
+                    	 			requiredMessage="First name is mandatory"
+                    	 			id="firstName"/> <h:message for="firstName" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Last name: <h:inputText value="#{customerController.lastName}" 
+    									styleClass="form-control"
+                		     			required="true"
+                	    	 			requiredMessage="Last name is mandatory"
+                	    	 			id="lastName"/> <h:message for="lastName" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Email: <h:inputText value="#{customerController.email}" 
+    							 styleClass="form-control"
+                    			 required="true"
+                    			 requiredMessage="Email is mandatory"
+                    			 id="email"/> <h:message for="email" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Password: <h:inputSecret value="#{customerController.password}" 
+    							 styleClass="form-control"
+                    			 required="true"
+                    			 requiredMessage="Password is mandatory"
+                    			 id="password"/> <h:message for="password" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Phone number: <h:inputText value="#{customerController.phoneNumber}" 
+    								styleClass="form-control"
+                				    required="true"
+                    	 			requiredMessage="Phone number is mandatory"
+                    	 			id="phoneNumber"/> <h:message for="phoneNumber" />
+				</div>
+    			<div class="form-group col-md-6">
+    				City: <h:inputText value="#{customerController.city}" 
+    								styleClass="form-control"
+                				    required="true"
+                    	 			requiredMessage="City is mandatory"
+                    	 			id="city"/> <h:message for="city" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Street: <h:inputText value="#{customerController.street}" 
+    									styleClass="form-control"
+                		     			required="true"
+                	    	 			requiredMessage="Street is mandatory"
+                	    	 			id="street"/> <h:message for="street" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Country: <h:inputText value="#{customerController.country}" 
+    							 styleClass="form-control"
+                    			 required="true"
+                    			 requiredMessage="Country is mandatory"
+                    			 id="country"/> <h:message for="country" />
+				</div>
+    			<div class="form-group col-md-6">
+    				State: <h:inputText value="#{customerController.state}" 
+    							 styleClass="form-control"
+                    			 required="true"
+                    			 requiredMessage="State is mandatory"
+                    			 id="state"/> <h:message for="state" />
+				</div>
+    			<div class="form-group col-md-6">
+    				Zip code: <h:inputText value="#{customerController.zipcode}" 
+    							 styleClass="form-control"
+                    			 required="true"
+                    			 requiredMessage="Zip code is mandatory"
+                    			 id="zipcode"/> <h:message for="zipcode" />
+				</div>
+				<div class="form-group col-md-12">
+					<h:commandButton value="Create"  styleClass="btn btn-primary" 
+								action="#{customerController.createCustomer}"/>
+				</div>
+			</h:form>
+		</div>
 	</div>
-    <div>Email: <h:inputText value="#{customerController.email}" 
-                     required="true"
-                     requiredMessage="Email is mandatory"
-                     id="email"/> <h:message for="email" />
-	</div>
-    <div>Password: <h:inputSecret value="#{customerController.password}" 
-                     required="true"
-                     requiredMessage="Password is mandatory"
-                     id="password"/> <h:message for="password" />
-	</div>
-	<div>
-		<h:commandButton value="Submit"  action="#{customerController.createCustomer}"/>
-	</div>
-	<h:commandLink action="#{customerController.listCustomers}"
-						value="List all Customers" />
-</h:form>
+</div>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
