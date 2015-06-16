@@ -25,12 +25,12 @@
 								<div>Name: <h:inputText value="#{adminController.name}" 
                      							required="true"
                      							requiredMessage="Name is mandatory"
-                     							id="name"/> <h:message for="name" />
+                     							id="name"/> <h:message style="color:red" for="name" />
                      			</div>
 							    <div>Password: <h:inputSecret value="#{adminController.password}" 
                     				 				required="true"
                     				 				requiredMessage="Password is mandatory"
-                     								id="password"/> <h:message for="password" />
+                     								id="password"/> <h:message style="color:red" for="password" />
 								</div>
 								<div>
 									<h:commandButton styleClass="btn btn-default" value="Login"  action="#{adminController.login}"/>

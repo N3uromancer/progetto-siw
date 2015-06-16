@@ -25,27 +25,27 @@
     				styleClass="form-control"
                      required="true"
                      requiredMessage="Name is mandatory"
-                     id="name"/> <h:message for="name" />
+                     id="name"/> <h:message style="color:red" for="name" />
 	</div>
     <div class="form-group col-md-6">
     	Code: <h:inputText styleClass="form-control" value="#{productController.code}" 
                      required="true"
                      requiredMessage="Code is mandatory"
-                     id="code"/> <h:message for="code" />
+                     id="code"/> <h:message style="color:red" for="code" />
 	</div>
     <div class="form-group col-md-6">
     	Price: <h:inputText styleClass="form-control" value="#{productController.price}" 
                      required="true"
                      requiredMessage="Price is mandatory"
                      converterMessage="Price must be a number"
-                     id="price"/> <h:message for="price" />
+                     id="price"/> <h:message style="color:red" for="price" />
 	</div>
     <div class="form-group col-md-6">
     	Quantity: <h:inputText styleClass="form-control" value="#{productController.quantity}" 
                      required="true"
                      requiredMessage="Quantity is mandatory"
                      converterMessage="Quantity must be a number"
-                     id="quantity"/> <h:message for="quantity" />
+                     id="quantity"/> <h:message style="color:red" for="quantity" />
 	</div>
     <div  class="form-group col-md-12">
     	Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}" 

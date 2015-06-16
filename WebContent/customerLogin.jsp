@@ -25,12 +25,12 @@
 								<div>Email: <h:inputText value="#{customerController.email}" 
                      							required="true"
                      							requiredMessage="Email is mandatory"
-                     							id="email"/> <h:message for="email" />
+                     							id="email"/> <h:message style="color:red" for="email" />
                      			</div>
 							    <div>Password: <h:inputSecret value="#{customerController.password}" 
                     				 				required="true"
                     				 				requiredMessage="Password is mandatory"
-                     								id="password"/> <h:message for="password" />
+                     								id="password"/> <h:message style="color:red" for="password" />
 								</div>
 								<div>
 									<h:commandButton styleClass="btn btn-default" value="Login"  action="#{customerController.login}"/>
