@@ -136,6 +136,18 @@ public class Customer {
 		return this.address;
 	}
 	
+	public Calendar getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(Calendar registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 	public void addOrder(Order newOrder){
 		this.orders.add(newOrder);
 	}
