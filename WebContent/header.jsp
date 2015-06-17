@@ -33,14 +33,9 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<c:if test="${customerController.loggedCustomer != null}">
-									<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
 									<li><a href="customerWelcomePage.jsp"><i class="fa fa-user"></i> ${customerController.customer.email}</a></li>
 								</c:if>
 								<c:if test="${adminController.loggedAdmin != null}">
-									<li><a href="#"><i class="fa fa-crosshairs"></i> Product</a></li>
-									<li><a href="#"><i class="fa fa-shopping-cart"></i> Order</a></li>
-									<li><a href="#"><i class="fa fa-user"></i> Customer</a></li>
 									<li><a href="adminWelcomePage.jsp"><i class="fa fa-user"></i> ${adminController.loggedAdmin.name}</a></li>							
 								</c:if>
 								<c:if test="${customerController.loggedCustomer == null && adminController.loggedAdmin == null}">
