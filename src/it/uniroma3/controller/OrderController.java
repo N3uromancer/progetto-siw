@@ -113,8 +113,9 @@ public class OrderController {
 	}
 	
 	public String deleteOrderLine(){
-		orderLineFacade.deleteOrderLine(this.orderLineFacade.getOrderLineIdFromRequestMap());
-		return "customerOrders";
+		long  orderLineId = this.orderLineFacade.getOrderLineIdFromRequestMap();
+		orderLineFacade.deleteOrderLine(orderLineId);
+		return "customerWelcomePage";
 	}
 	
 	public String processOrder(){
