@@ -27,6 +27,10 @@ public class OrderLine {
 		this.product = product;
 	}
 	
+	public long getId(){
+		return this.id;
+	}
+	
 	public float getUnitPrice(){
 		return this.unitPrice;
 	}
