@@ -10,27 +10,37 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-<h1>Orders</h1>
-<f:view>
-<h:form>
-<table border="solid">
-	<tr>
-		<th>Order Id</th> <th>State</th><th>Order info</th>
-	</tr>
-	<c:forEach var="order" items="#{orderController.orders}">
-		<tr>
-			<td>${order.id}</td>
-			<td>${order.state}</td>
-			<td>
-				<h:commandLink action="#{orderController.getOrderInfo}" value="info" >
-					<f:param name="orderId" value="#{order.id}" />
-				</h:commandLink>
-				
-			</td>
-		</tr>
-	</c:forEach>
-</table>
-</h:form>
+	<f:view>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1>My<span> Orders</span></h1>
+		</div>
+	</div>
+	<h:form>
+		<div class="col-sm-12">
+			<div class="table-responsive">
+				<table class="table table-condensed" border="solid">
+					<thead>
+						<tr>
+							<th>Order Id</th><th>State</th><th>Orderline</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="order" items="#{orderController.orders}">
+							<tr>
+								<td>${order.id}</td>
+								<td>${order.state}</td>
+								<td>
+									<h:commandLink styleClass="btn btn-default" action="#{orderController.getOrderInfo}" value="View" >
+										<f:param name="orderId" value="#{order.id}" />
+									</h:commandLink>	
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</h:form>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
