@@ -26,7 +26,7 @@
 						<h:commandLink styleClass="btn btn-default padding-left" action = "#{productController.listProducts}" value = "Add product"/>
 					</div>
 					<div class="col-sm-4">
-						<h:commandLink styleClass="btn btn-default padding-right" action = "#{orderController.completeOrder}" value = "complete order" />
+						<h:commandLink styleClass="btn btn-default padding-right" action = "#{orderController.completeOrder}" value = "Complete order"/>
 					</div>
 				</div>
 			</h:form>
@@ -38,7 +38,7 @@
 							<td class="price">Price</td>
 							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
-							<td></td>
+							<!--td>Remove</td-->
 						</tr>
 					</thead>
 					<tbody>
@@ -46,10 +46,10 @@
 							<tr>
 								<td class="cart_description">
 									<h4>${ol.product.name}</h4>
-									<p>${ol.product.code}</p>
+									<p>code: ${ol.product.code}</p>
 								</td>
 								<td class="cart_price">
-									<p>${ol.unitPrice}</p>
+									<p>${ol.unitPrice}&euro;</p>
 								</td>
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
@@ -57,11 +57,16 @@
 									</div>
 								</td>
 								<td class="cart_total">
-									<p class="cart_total_price">${ol.unitPrice*ol.quantity}</p>
+									<p class="cart_total_price">${ol.unitPrice*ol.quantity}&euro;</p>
 								</td>
-								<td class="cart_delete">
-									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-								</td>
+								<!--td class="cart_delete">
+									<h:form>
+										<h:commandLink styleClass="cart_quantity_delete"
+														action="#{orderController.deleteOrderLine}" value="X">
+											<f:param name="orderLineId" value="#{ol.id}" />
+										</h:commandLink> 
+									</h:form>
+								</td-->
 							</tr>
 						</c:forEach>
 					</tbody>

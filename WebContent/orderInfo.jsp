@@ -23,11 +23,10 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="description">Product</td>
+							<td class="text-center">Product</td>
 							<td class="price">Price</td>
 							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
-							<td>Remove</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -35,10 +34,10 @@
 							<tr>
 								<td class="cart_description">
 									<h4>${ol.product.name}</h4>
-									<p>${ol.product.code}</p>
+									<p>code: ${ol.product.code}</p>
 								</td>
 								<td class="cart_price">
-									<p>${ol.unitPrice}</p>
+									<p>${ol.unitPrice}&euro;</p>
 								</td>
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
@@ -46,15 +45,7 @@
 									</div>
 								</td>
 								<td class="cart_total">
-									<p class="cart_total_price">${ol.unitPrice*ol.quantity}</p>
-								</td>
-								<td class="cart_delete">
-									<h:form>
-										<h:commandLink styleClass="cart_quantity_delete"
-														action="#{orderController.deleteOrderLine}" value="X">
-											<f:param name="orderLineId" value="#{ol.id}" />
-										</h:commandLink> 
-									</h:form>
+									<p class="cart_total_price">${ol.unitPrice*ol.quantity}&euro;</p>
 								</td>
 							</tr>
 						</c:forEach>
