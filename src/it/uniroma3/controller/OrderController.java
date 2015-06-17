@@ -112,6 +112,11 @@ public class OrderController {
 		return "adminWelcomePage";
 	}
 	
+	public String deleteOrderLine(){
+		orderLineFacade.deleteOrderLine(this.orderLineFacade.getOrderLineIdFromRequestMap());
+		return "customerOrders";
+	}
+	
 	public String processOrder(){
 		this.order = this.orderFacade.getOrderFromIdInRequestMap();
 		boolean isProcessed = this.orderFacade.processOrder(this.order);
