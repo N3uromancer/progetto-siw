@@ -3,6 +3,7 @@ package it.uniroma3.model;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -24,6 +25,18 @@ import javax.persistence.Query;
 			q.setParameter("id", id);
 			List<OrderLine> orderLines = (List<OrderLine>) q.getResultList();
 			return orderLines;
+	    }
+	    
+	    public long getOrderLineIdFromRequestMap(){
+			String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("orderLineId");
+			long id = Long.valueOf(stringId).longValue();
+	    	return id;
+	    }
+	    
+	    public void deleteOrderLine(long id) {
+	    	Query q = em.createQuery("DELETE FROM OrderLine ol WHERE ol.id = :id");
+	    	q.setParameter("id", id).executeUpdate();
+	    	
 	    }
 	    
 		public void updateOrderLine(OrderLine orderLine) {
