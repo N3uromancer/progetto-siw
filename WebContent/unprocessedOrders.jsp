@@ -10,25 +10,36 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<h1>Orders</h1>
 <f:view>
-<h:form>
-<table border="solid">
-	<tr>
-		<th>ID</th><th>Action</th>
-	</tr>
-	<c:forEach var="order" items="#{orderController.orders}">
-		<tr>
-			<td>${order.id}</td>
-			<td>
-				<h:commandLink action="#{orderController.processOrder}" value="Process">
-					<f:param name="orderId" value="#{order.id}" />
-				</h:commandLink>			
-			</td>
-		</tr>
-	</c:forEach>
-</table>
-</h:form>
+	<div class="item">
+		<div class="col-sm-12">
+			<h1>Process<span> Orders</span></h1>
+		</div>
+	</div>
+	<h:form>
+		<div class="col-sm-2 col-sm-offset-5">
+			<div class="table-responsive">
+				<table class="table table-condensed" border="solid">
+					<thead>
+						<tr>
+							<th>ID</th><th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="order" items="#{orderController.orders}">
+							<tr>
+								<td>${order.id}</td>
+								<td>
+									<h:commandLink styleClass="btn btn-default" action="#{orderController.processOrder}" value="Process">
+										<f:param name="orderId" value="#{order.id}" />
+									</h:commandLink>			
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</h:form>
 </f:view>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
